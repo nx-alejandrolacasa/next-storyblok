@@ -7,7 +7,11 @@ interface TeaserBlok extends SbBlokData {
 type TeaserProps = { blok: TeaserBlok }
 
 const Teaser = ({ blok }: TeaserProps) => {
-  return <h2 {...storyblokEditable(blok)}>{blok.headline}</h2>
+  return (
+    <h2 className="text-2xl mb-10" {...storyblokEditable(blok)}>
+      {blok.headline}
+    </h2>
+  )
 }
 
 export default Teaser

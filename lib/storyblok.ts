@@ -8,19 +8,25 @@ export const getStaticProps: GetStaticProps = async ({ params, preview }) => {
 
   const sbParams = {
     version: preview ? 'draft' : 'published',
+    resolve_links: 'url',
   }
 
   const storyblokApi = getStoryblokApi()
-  let { data } = await storyblokApi.get(
+  const { data } = await storyblokApi.get(
     `cdn/stories/${slug ?? 'home'}`,
+    sbParams
+  )
+  const { data: config } = await storyblokApi.get(
+    'cdn/stories/config',
     sbParams
   )
 
   return {
     props: {
-      story: data?.story ?? false,
+      config: config?.story ?? false,
       key: data?.story?.id ?? false,
       preview: preview ?? false,
+      story: data?.story ?? false,
     },
     revalidate: 3600,
   }

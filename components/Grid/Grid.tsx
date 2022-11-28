@@ -12,7 +12,7 @@ type GridProps = { blok: GridBlok }
 
 const Grid = ({ blok }: GridProps) => {
   return (
-    <div className="grid" {...storyblokEditable(blok)}>
+    <div className="grid grid-cols-3 gap-4" {...storyblokEditable(blok)}>
       {blok.columns.map((nestedBlok: SbBlokData) => (
         <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
       ))}
