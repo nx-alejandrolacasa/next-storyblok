@@ -1,5 +1,6 @@
-import { SbBlokData, storyblokEditable } from '@storyblok/react'
 import Link from 'next/link'
+import { SbBlokData, storyblokEditable } from '@storyblok/react'
+import { AnchorHTMLAttributes } from 'react'
 
 interface ButtonBlok extends SbBlokData {
   label: string
@@ -18,15 +19,10 @@ export function Button({ blok }: ButtonProps) {
     blok.type === 'primary' ? 'bg-rose-400' : 'bg-indigo-400 text-white'
   }`
 
-  const linkButton = (
-    <a
-      href={blok.link?.cached_url}
-      className={className}
-      {...storyblokEditable(blok)}
-    >
-      {blok.label}
-    </a>
-  )
+  const LinkButton =
+    blok.link?.linktype === 'story'
+      ? Link
+      : (props: AnchorHTMLAttributes<any>) => <a {...props}></a>
 
   if (blok.submit) {
     return (
@@ -36,11 +32,14 @@ export function Button({ blok }: ButtonProps) {
     )
   }
 
-  return blok.link?.linktype === 'story' ? (
-    <Link href={blok.link?.cached_url} legacyBehavior>
-      {linkButton}
-    </Link>
-  ) : (
-    linkButton
+  return (
+    <LinkButton
+      role="button"
+      href={blok.link?.cached_url ?? '#'}
+      className={className}
+      {...storyblokEditable(blok)}
+    >
+      {blok.label}
+    </LinkButton>
   )
 }

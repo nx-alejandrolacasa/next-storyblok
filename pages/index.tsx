@@ -1,16 +1,16 @@
 import Head from 'next/head'
 import { NextPage } from 'next'
 import {
+  ISbStoryData,
   StoryblokComponent,
-  StoryData,
   useStoryblokState,
 } from '@storyblok/react'
 
-const HomePage: NextPage<{ story: StoryData; preview?: boolean }> = ({
+const HomePage: NextPage<{ story: ISbStoryData; preview?: boolean }> = ({
   story,
   preview,
 }) => {
-  story = useStoryblokState(story, {}, preview)
+  story = useStoryblokState(story, {})
 
   return (
     <>
@@ -24,6 +24,6 @@ const HomePage: NextPage<{ story: StoryData; preview?: boolean }> = ({
   )
 }
 
-export { getStaticProps } from '@lib/storyblok'
+export { getStaticProps } from '@lib/storyblok/index'
 
 export default HomePage

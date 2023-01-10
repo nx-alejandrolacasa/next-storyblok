@@ -1,17 +1,17 @@
 import Head from 'next/head'
 import {
   getStoryblokApi,
+  ISbStoryData,
   StoryblokComponent,
-  StoryData,
   useStoryblokState,
 } from '@storyblok/react'
-import { NextPage } from 'next'
+import { GetStaticPaths, NextPage } from 'next'
 
-const Page: NextPage<{ story: StoryData; preview?: boolean }> = ({
+const Page: NextPage<{ story: ISbStoryData; preview?: boolean }> = ({
   story,
   preview,
 }) => {
-  story = useStoryblokState(story, {}, preview)
+  story = useStoryblokState(story, {})
 
   return (
     <>
@@ -25,14 +25,19 @@ const Page: NextPage<{ story: StoryData; preview?: boolean }> = ({
   )
 }
 
-export async function getStaticPaths() {
+// @ts-ignore
+export const getStaticPaths: GetStaticPaths = async ({ locales = ['en'] }) => {
   const storyblokApi = getStoryblokApi()
   const { data } = await storyblokApi.get('cdn/links/')
 
   const paths = Object.keys(data.links)
     .map((key) => data.links[key])
     .filter((link) => !(link.is_folder || link.slug === 'home'))
-    .map((link) => ({ params: { slug: link.slug.split('/') } }))
+    .flatMap((link) => {
+      locales.map((locale) => [
+        { params: { slug: link.slug.split('/') }, locale },
+      ])
+    })
 
   return {
     paths,
@@ -40,6 +45,6 @@ export async function getStaticPaths() {
   }
 }
 
-export { getStaticProps } from '@lib/storyblok'
+export { getStaticProps } from '@lib/storyblok/index'
 
 export default Page

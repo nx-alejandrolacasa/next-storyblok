@@ -12,6 +12,10 @@ export interface ConfigBlok extends SbBlokData {
 type ConfigProps = { blok: ConfigBlok }
 
 function Config({ blok }: ConfigProps) {
+  if (!blok) {
+    return null
+  }
+
   return (
     <div
       className="relative bg-white border-b-2 border-gray-100"
