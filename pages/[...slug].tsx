@@ -6,6 +6,7 @@ import {
   useStoryblokState,
 } from '@storyblok/react'
 import { GetStaticPaths, NextPage } from 'next'
+import { getPathsFromLinks } from '../utils/storyblok'
 
 const Page: NextPage<{ story: ISbStoryData; preview?: boolean }> = ({
   story,
@@ -30,17 +31,8 @@ export const getStaticPaths: GetStaticPaths = async ({ locales = ['en'] }) => {
   const storyblokApi = getStoryblokApi()
   const { data } = await storyblokApi.get('cdn/links/')
 
-  const paths = Object.keys(data.links)
-    .map((key) => data.links[key])
-    .filter((link) => !(link.is_folder || link.slug === 'home'))
-    .flatMap((link) => {
-      locales.map((locale) => [
-        { params: { slug: link.slug.split('/') }, locale },
-      ])
-    })
-
   return {
-    paths,
+    paths: getPathsFromLinks(data.links, locales),
     fallback: false,
   }
 }
