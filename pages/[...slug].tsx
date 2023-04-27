@@ -29,7 +29,9 @@ const Page: NextPage<{ story: ISbStoryData; preview?: boolean }> = ({
 // @ts-ignore
 export const getStaticPaths: GetStaticPaths = async ({ locales = ['en'] }) => {
   const storyblokApi = getStoryblokApi()
-  const { data } = await storyblokApi.get('cdn/links/')
+  const { data } = await storyblokApi.get('cdn/links/', {
+    version: 'published',
+  })
 
   return {
     paths: getPathsFromLinks(data.links, locales),
