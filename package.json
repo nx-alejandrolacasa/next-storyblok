@@ -10,7 +10,7 @@
     "test": "vitest run",
     "pull-sb-components": "storyblok pull-components --space=185369 --path=./types/",
     "generate-sb-types": "storyblok-generate-ts source=./types/components.185369.json target=./types/sb-types",
-    "sb-types": "npm run pull-sb-components && npm run generate-sb-types"
+    "sb-types": "pnpm pull-sb-components && pnpm generate-sb-types && pnpm prettier --write ./types/sb-types.d.ts"
   },
   "dependencies": {
     "@storyblok/react": "~2.0.17",
