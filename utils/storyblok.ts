@@ -6,10 +6,11 @@ export function getPathsFromLinks(
 ) {
   return Object.keys(links)
     .map((key) => links[key])
-    .filter((link) => !(link.is_folder || link.slug === 'home'))
+    .filter((link) => !link.is_folder && link.slug !== 'home' && link.published)
     .flatMap((link) =>
-      locales.flatMap((locale) => [
-        { params: { slug: link.slug.split('/') }, locale },
-      ])
+      locales.map((locale) => ({
+        params: { slug: link.slug.split('/') },
+        locale,
+      }))
     )
 }

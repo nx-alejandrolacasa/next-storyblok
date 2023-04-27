@@ -5,10 +5,12 @@ describe('getPathsFromLinks', () => {
     const links = {
       '1234': {
         is_folder: false,
+        published: true,
         slug: 'pages/foo',
       },
       '5678': {
         is_folder: false,
+        published: true,
         slug: 'pages/bar',
       },
     }
@@ -28,10 +30,12 @@ describe('getPathsFromLinks', () => {
     const links = {
       '1234': {
         is_folder: false,
+        published: true,
         slug: 'pages/foo',
       },
       '5678': {
         is_folder: false,
+        published: true,
         slug: 'home',
       },
     }
@@ -49,10 +53,35 @@ describe('getPathsFromLinks', () => {
     const links = {
       '1234': {
         is_folder: false,
+        published: true,
         slug: 'pages/foo',
       },
       '5678': {
         is_folder: true,
+        published: true,
+        slug: 'pages/bar',
+      },
+    }
+    const locales = ['en', 'de']
+    const expected = [
+      { params: { slug: ['pages', 'foo'] }, locale: 'en' },
+      { params: { slug: ['pages', 'foo'] }, locale: 'de' },
+    ]
+
+    // @ts-ignore
+    expect(getPathsFromLinks(links, locales)).toEqual(expected)
+  })
+
+  it('should not return paths not published', () => {
+    const links = {
+      '1234': {
+        is_folder: false,
+        published: true,
+        slug: 'pages/foo',
+      },
+      '5678': {
+        is_folder: false,
+        published: false,
         slug: 'pages/bar',
       },
     }
