@@ -1,13 +1,7 @@
-import { SbBlokData, storyblokEditable } from '@storyblok/react'
+import { storyblokEditable } from '@storyblok/react'
+import { FeatureStoryblok } from '@/types/sb-types'
 
-interface FeatureBlok extends SbBlokData {
-  image: {
-    filename: string
-  }
-  name: string
-}
-
-type FeatureProps = { blok: FeatureBlok }
+type FeatureProps = { blok: FeatureStoryblok }
 
 function Feature({ blok }: FeatureProps) {
   return (

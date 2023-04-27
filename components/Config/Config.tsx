@@ -1,15 +1,8 @@
-import {
-  SbBlokData,
-  StoryblokComponent,
-  storyblokEditable,
-} from '@storyblok/react'
+import { StoryblokComponent, storyblokEditable } from '@storyblok/react'
 import Link from 'next/link'
+import { ConfigStoryblok } from '@/types/sb-types'
 
-export interface ConfigBlok extends SbBlokData {
-  header_menu: SbBlokData[]
-}
-
-type ConfigProps = { blok: ConfigBlok }
+type ConfigProps = { blok: ConfigStoryblok }
 
 function Config({ blok }: ConfigProps) {
   if (!blok) {
@@ -34,7 +27,7 @@ function Config({ blok }: ConfigProps) {
               />
             </Link>
           </div>
-          {blok.header_menu.map((nestedBlok) => (
+          {blok.header_menu?.map((nestedBlok) => (
             <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
           ))}
         </div>

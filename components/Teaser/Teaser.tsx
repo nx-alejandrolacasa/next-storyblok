@@ -1,10 +1,7 @@
-import { SbBlokData, storyblokEditable } from '@storyblok/react'
+import { storyblokEditable } from '@storyblok/react'
+import { TeaserStoryblok } from '@/types/sb-types'
 
-interface TeaserBlok extends SbBlokData {
-  headline: string
-}
-
-type TeaserProps = { blok: TeaserBlok }
+type TeaserProps = { blok: TeaserStoryblok }
 
 const Teaser = ({ blok }: TeaserProps) => {
   return (

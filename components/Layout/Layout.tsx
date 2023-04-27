@@ -1,11 +1,12 @@
 import { ReactNode } from 'react'
-import Footer from '@components/Footer/Footer'
-import Config, { ConfigBlok } from '@components/Config/Config'
+import Footer from '@/components/Footer/Footer'
+import Config from '@/components/Config/Config'
 import { ISbStoryData } from '@storyblok/react'
+import { ConfigStoryblok } from '@/types/sb-types'
 
 type LayoutProps = {
   children: ReactNode
-  story: ISbStoryData<ConfigBlok>
+  story: ISbStoryData<ConfigStoryblok>
 }
 
 const Layout = ({ children, story }: LayoutProps) => (

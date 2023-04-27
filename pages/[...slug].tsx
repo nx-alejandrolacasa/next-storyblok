@@ -6,7 +6,7 @@ import {
   useStoryblokState,
 } from '@storyblok/react'
 import { GetStaticPaths, NextPage } from 'next'
-import { getPathsFromLinks } from '../utils/storyblok'
+import { getPathsFromLinks } from '@/utils/storyblok'
 
 const Page: NextPage<{ story: ISbStoryData; preview?: boolean }> = ({
   story,
@@ -39,6 +39,6 @@ export const getStaticPaths: GetStaticPaths = async ({ locales = ['en'] }) => {
   }
 }
 
-export { getStaticProps } from '@lib/storyblok/index'
+export { getStaticProps } from '@/lib/storyblok/index'
 
 export default Page

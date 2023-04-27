@@ -1,18 +1,9 @@
 import Link from 'next/link'
-import { SbBlokData, storyblokEditable } from '@storyblok/react'
+import { storyblokEditable } from '@storyblok/react'
 import { AnchorHTMLAttributes } from 'react'
+import { ButtonStoryblok } from '@/types/sb-types'
 
-interface ButtonBlok extends SbBlokData {
-  label: string
-  link?: {
-    cached_url: string
-    linktype: 'url' | 'story'
-  }
-  submit?: boolean
-  type: 'primary' | 'secondary'
-}
-
-type ButtonProps = { blok: ButtonBlok }
+type ButtonProps = { blok: ButtonStoryblok }
 
 export function Button({ blok }: ButtonProps) {
   const className = `p-2 border-2 border-gray-100 rounded-xl text-center ${
