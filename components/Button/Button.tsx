@@ -6,12 +6,14 @@ import { ButtonStoryblok } from '@/types/sb-types'
 
 type ButtonProps = { blok: ButtonStoryblok }
 
-export function Button({blok}: ButtonProps) {
-  const className = clsx(
-    "p-2 border-2 border-gray-100 rounded-xl text-center",
-    blok.type === 'primary' && 'bg-rose-400',
-    blok.type !== 'primary' && 'bg-indigo-400 text-white'
-  )
+export function Button({ blok }: ButtonProps) {
+  const props = {
+    className: clsx(
+      'p-2 border-2 border-gray-100 rounded-xl text-center',
+      blok.type === 'primary' && 'bg-rose-400',
+      blok.type === 'secondary' && 'bg-indigo-400 text-white'
+    ),
+  }
 
   const LinkButton =
     blok.link?.linktype === 'story'
@@ -20,7 +22,7 @@ export function Button({blok}: ButtonProps) {
 
   if (blok.submit) {
     return (
-      <button type="submit" className={className} {...storyblokEditable(blok)}>
+      <button type="submit" {...props} {...storyblokEditable(blok)}>
         {blok.label}
       </button>
     )
@@ -30,7 +32,7 @@ export function Button({blok}: ButtonProps) {
     <LinkButton
       role="button"
       href={blok.link?.cached_url ?? '#'}
-      className={className}
+      {...props}
       {...storyblokEditable(blok)}
     >
       {blok.label}
