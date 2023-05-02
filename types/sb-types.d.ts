@@ -1,5 +1,3 @@
-import { StoryblokStory } from 'storyblok-generate-ts'
-
 export type MultilinkStoryblok =
   | {
       cached_url?: string
