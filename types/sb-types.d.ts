@@ -1,3 +1,5 @@
+import { StoryblokStory } from 'storyblok-generate-ts'
+
 export type MultilinkStoryblok =
   | {
       cached_url?: string
@@ -57,7 +59,7 @@ export interface ButtonStoryblok {
   label: string
   link?: MultilinkStoryblok
   submit?: boolean
-  type?: '' | 'primary' | 'secondary'
+  type?: 'primary' | 'secondary'
   _uid: string
   component: 'button'
   [k: string]: any
