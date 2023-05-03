@@ -13,13 +13,13 @@ function Feature({ blok }: FeatureProps) {
           src={`${blok.image.filename}/m/`}
           alt="feature"
         />
-        <h1 className="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">
+        <h3 className="mx-auto mb-8 leading-none tracking-tighter text-neutral-600 lg:text-3xl">
           {blok.name}
-        </h1>
+        </h3>
         <div className="mt-4">
           <a
             href="#"
-            className="inline-flex items-center mt-4 font-semibold text-blue-600 lg:mb-0 hover:text-neutral-600"
+            className="inline-flex items-center mt-4 text-blue-2 lg:mb-0 hover:text-gray-1"
             title="read more"
           >
             Read More &raquo;

@@ -9,9 +9,9 @@ type ButtonProps = { blok: ButtonStoryblok }
 export function Button({ blok }: ButtonProps) {
   const props = {
     className: clsx(
-      'p-2 border-2 border-gray-100 rounded-xl text-center',
-      blok.type === 'primary' && 'bg-rose-400',
-      blok.type === 'secondary' && 'bg-indigo-400 text-white'
+      'p-2 border-2 border-gray-100 rounded-xl text-center text-white text-cta',
+      blok.type === 'primary' && 'bg-blue-1',
+      blok.type === 'secondary' && 'bg-green-1'
     ),
   }
 

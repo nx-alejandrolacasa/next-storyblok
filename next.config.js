@@ -6,6 +6,9 @@ const nextConfig = {
     locales: ['en', 'es'],
     defaultLocale: 'en',
   },
+  images: {
+    domains: ['images.unsplash.com'],
+  },
 }
 
 module.exports = nextConfig
