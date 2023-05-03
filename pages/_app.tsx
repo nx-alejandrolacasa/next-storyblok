@@ -12,7 +12,7 @@ import Config from '@/components/Config/Config'
 import { Button } from '@/components/Button/Button'
 import { Source_Sans_Pro } from 'next/font/google'
 
-Source_Sans_Pro({
+const source = Source_Sans_Pro({
   subsets: ['latin'],
   variable: '--font-source',
   weight: ['400', '700', '900'],
