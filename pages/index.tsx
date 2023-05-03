@@ -53,7 +53,7 @@ const HomePage: NextPage<{ story: ISbStoryData; preview?: boolean }> = ({
                 >
                   <circle cx="1" cy="1" r="1" />
                 </svg>
-                <div className="text-gray-1">Worker of PIN AG</div>
+                <div className="text-gray-1">Worker of Company AG</div>
               </div>
             </figcaption>
           </figure>
