@@ -22,6 +22,7 @@ module.exports = {
       accent: '#E98600',
       light: '#F5F5F5',
       foreground: '#535353',
+      black: '#000000',
       white: '#FFFFFF',
     },
     extend: {},
