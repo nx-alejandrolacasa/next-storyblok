@@ -4,7 +4,10 @@ import { AnchorHTMLAttributes } from 'react'
 import { ButtonStoryblok } from '@/types/sb-types'
 import clsx from 'clsx'
 
-type ButtonProps = { blok: ButtonStoryblok }
+type ButtonProps = {
+  blok: ButtonStoryblok
+  className?: string
+}
 
 export function Button({ blok }: ButtonProps) {
   const props = {

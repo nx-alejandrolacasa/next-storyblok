@@ -27,12 +27,36 @@
   }
 }
 
-@layer components {
-  .nx-gradient {
-    @apply relative overflow-hidden;
-    @apply before:absolute before:top-0 before:right-0 before:bg-gradient-to-b before:from-[#EDEDED] before:h-full before:w-full before:z-[-1];
-    @apply after:absolute after:w-full after:bg-white after:h-full after:top-0 after:left-0 after:skew-x-[-25deg] after:translate-x-[-50%] after:z-[-1];
+@layer utilities {
+  .nx-rich-text {
+    @apply overflow-wrap-anywhere;
+  }
+
+  .nx-rich-text ol {
+    list-style-type: decimal;
+  }
+
+  .nx-rich-text ul {
+    list-style-type: disc;
+  }
+
+  .nx-rich-text ul,
+  .nx-rich-text ol {
+    list-style-position: inside;
+  }
+
+  .nx-rich-text li > * {
+    display: inline;
+  }
+
+  .nx-rich-text p:empty {
+    padding-bottom: 1rem;
   }
 }
 
-
+@layer components {
+  .overflow-wrap-anywhere {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
