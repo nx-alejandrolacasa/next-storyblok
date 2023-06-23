@@ -20,7 +20,7 @@ const Teaser = ({ blok }: TeaserProps) => {
           text={blok.description}
         />
       )}
-      {blok.cta && (
+      {!!blok.cta?.length && (
         <div className="flex w-full justify-center py-4">
           <Button blok={blok.cta[0]} />
         </div>
