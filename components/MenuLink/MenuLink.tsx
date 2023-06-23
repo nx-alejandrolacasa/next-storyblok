@@ -9,7 +9,7 @@ function MenuLink({ blok }: MenuLinkProps) {
     <Link
       href={blok.link?.cached_url}
       {...storyblokEditable(blok)}
-      className="text-regular font-medium text-gray-1 hover:text-foreground"
+      className="text-base font-bold text-dark hover:underline"
     >
       {blok.name}
     </Link>

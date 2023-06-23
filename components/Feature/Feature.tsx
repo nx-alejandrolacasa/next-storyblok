@@ -10,20 +10,20 @@ function Feature({ blok }: FeatureProps) {
       <div className="p-6">
         <div className="h-36 lg:h-48">
           <Image
-            alt="feature"
+            alt="feature image"
             className="mb-8 h-auto w-full rounded-xl object-center"
             height={533}
             src={`${blok.image.filename}/m/`}
             width={800}
           />
         </div>
-        <h3 className="mx-auto mb-8 text-h3 leading-none tracking-tighter text-blue-3 lg:text-foreground">
+        <h3 className="mx-auto mb-8 text-3xl leading-none tracking-tighter text-dark">
           {blok.name}
         </h3>
         <div className="mt-4">
           <a
             href="#"
-            className="mt-4 inline-flex items-center text-blue-2 hover:text-gray-1 lg:mb-0"
+            className="mt-4 inline-flex items-center text-primary-1 hover:underline lg:mb-0"
             title="read more"
           >
             Read More &raquo;

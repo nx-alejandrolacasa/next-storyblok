@@ -6,7 +6,7 @@ type TeaserProps = { blok: TeaserStoryblok }
 const Teaser = ({ blok }: TeaserProps) => {
   return (
     <h2
-      className="my-5 w-full text-center text-h2 text-foreground"
+      className="my-5 w-full text-center text-4xl text-dark"
       {...storyblokEditable(blok)}
     >
       {blok.headline}

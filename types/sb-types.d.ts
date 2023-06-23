@@ -57,7 +57,7 @@ export interface ButtonStoryblok {
   label: string
   link?: MultilinkStoryblok
   submit?: boolean
-  type?: 'primary' | 'secondary'
+  type: 'primary' | 'secondary' | 'tertiary'
   _uid: string
   component: 'button'
   [k: string]: any
@@ -112,8 +112,19 @@ export interface PageStoryblok {
   [k: string]: any
 }
 
+export interface RichtextStoryblok {
+  type: string
+  content?: RichtextStoryblok[]
+  marks?: RichtextStoryblok[]
+  attrs?: any
+  text?: string
+  [k: string]: any
+}
+
 export interface TeaserStoryblok {
   headline?: string
+  cta?: ButtonStoryblok[]
+  description?: RichtextStoryblok
   _uid: string
   component: 'teaser'
   [k: string]: any

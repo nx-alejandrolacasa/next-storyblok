@@ -8,22 +8,22 @@
 
 @layer base {
   h1 {
-    @apply text-h1 font-black;
+    @apply text-5xl font-black;
   }
   h2 {
-    @apply text-h2 font-black;
+    @apply text-4xl font-black;
   }
   h3 {
-    @apply text-h3 font-black;
+    @apply text-3xl font-black;
   }
   h4 {
-    @apply text-h4 font-black;
+    @apply text-2xl font-black;
   }
   h5 {
-    @apply text-h5 font-black;
+    @apply text-xl font-black;
   }
   a, p {
-    @apply text-regular;
+    @apply text-base;
   }
 }
 
