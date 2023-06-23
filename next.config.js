@@ -7,8 +7,9 @@ const nextConfig = {
     defaultLocale: 'en',
   },
   images: {
-    domains: ['images.unsplash.com'],
+    domains: ['images.unsplash.com', 'a.storyblok.com'],
   },
+  output: 'standalone',
 }
 
 module.exports = nextConfig

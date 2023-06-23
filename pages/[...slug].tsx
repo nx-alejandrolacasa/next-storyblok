@@ -12,12 +12,12 @@ const Page: NextPage<{ story: ISbStoryData; preview?: boolean }> = ({
   story,
   preview,
 }) => {
-  story = useStoryblokState(story, {})
+  const sbState = useStoryblokState(story, {})
 
   return (
     <>
       <Head>
-        <title>{story ? story.name : 'Default title'}</title>
+        <title>{sbState ? sbState.name : 'Default title'}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

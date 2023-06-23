@@ -1,17 +1,17 @@
-import clsx from 'clsx'
 import Link from 'next/link'
 import { storyblokEditable } from '@storyblok/react'
 import { AnchorHTMLAttributes } from 'react'
 import { ButtonStoryblok } from '@/types/sb-types'
+import clsx from 'clsx'
 
 type ButtonProps = { blok: ButtonStoryblok }
 
 export function Button({ blok }: ButtonProps) {
   const props = {
     className: clsx(
-      'p-2 border-2 border-gray-100 rounded-xl text-center text-white text-cta',
-      blok.type === 'primary' && 'bg-blue-1',
-      blok.type === 'secondary' && 'bg-green-1'
+      'rounded-xl p-2 text-center text-cta text-white transition-all',
+      blok.type === 'primary' && 'bg-blue-1 hover:bg-blue-2',
+      blok.type === 'secondary' && 'bg-red-1 hover:bg-red-2'
     ),
   }
 

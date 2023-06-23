@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import Footer from '@/components/Footer/Footer'
-import Config from '@/components/Config/Config'
+import Header from '@/components/Header/Header'
 import { ISbStoryData } from '@storyblok/react'
 import { ConfigStoryblok } from '@/types/sb-types'
 
@@ -10,11 +10,11 @@ type LayoutProps = {
 }
 
 const Layout = ({ children, story }: LayoutProps) => (
-  <>
-    <Config blok={story?.content} />
-    <div className="p-8">{children}</div>
+  <div className="font-source">
+    <Header blok={story?.content} />
+    <main className="w-screen max-w-full pt-8">{children}</main>
     <Footer />
-  </>
+  </div>
 )
 
 export default Layout

@@ -10,7 +10,7 @@ const HomePage: NextPage<{ story: ISbStoryData; preview?: boolean }> = ({
   story,
   preview,
 }) => {
-  story = useStoryblokState(story, {})
+  const sbState = useStoryblokState(story, {})
 
   return (
     <>
@@ -19,7 +19,7 @@ const HomePage: NextPage<{ story: ISbStoryData; preview?: boolean }> = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <StoryblokComponent blok={story.content} />
+      <StoryblokComponent blok={sbState?.content} />
     </>
   )
 }
