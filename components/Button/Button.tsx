@@ -12,10 +12,11 @@ type ButtonProps = {
 export function Button({ blok }: ButtonProps) {
   const props = {
     className: clsx(
-      'rounded-xl p-2 text-center text-sm text-white transition-all',
-      blok.type === 'primary' && 'bg-primary-1 hover:bg-primary-2',
-      blok.type === 'secondary' && 'bg-secondary-1 hover:bg-secondary-2',
-      blok.type === 'tertiary' && 'bg-gray-1 hover:bg-gray-2'
+      'rounded-xl p-3 text-center text-base font-semibold transition-all',
+      blok.type === 'primary' && 'bg-primary-1 text-white hover:bg-primary-2',
+      blok.type === 'secondary' &&
+        'bg-secondary-1 text-white hover:bg-secondary-2',
+      blok.type === 'tertiary' && 'bg-gray-1 text-dark hover:bg-gray-2'
     ),
   }
 

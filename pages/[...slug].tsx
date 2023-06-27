@@ -39,6 +39,6 @@ export const getStaticPaths: GetStaticPaths = async ({ locales = ['en'] }) => {
   }
 }
 
-export { getStaticProps } from '@/lib/storyblok/index'
+export { getStaticProps } from '@/lib/storyblok'
 
 export default Page

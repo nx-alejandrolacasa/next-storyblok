@@ -11,13 +11,13 @@ function Feature({ blok }: FeatureProps) {
         <div className="h-36 lg:h-48">
           <Image
             alt="feature image"
-            className="mb-8 h-auto w-full rounded-xl object-center"
+            className="mb-8 h-full w-auto rounded-xl object-center"
             height={533}
             src={`${blok.image.filename}/m/`}
             width={800}
           />
         </div>
-        <h3 className="mx-auto mb-8 text-3xl leading-none tracking-tighter text-dark">
+        <h3 className="mx-auto my-4 text-3xl leading-none tracking-tighter text-dark">
           {blok.name}
         </h3>
         <div className="mt-4">

@@ -24,6 +24,6 @@ const HomePage: NextPage<{ story: ISbStoryData; preview?: boolean }> = ({
   )
 }
 
-export { getStaticProps } from '@/lib/storyblok/index'
+export { getStaticProps } from '@/lib/storyblok'
 
 export default HomePage
