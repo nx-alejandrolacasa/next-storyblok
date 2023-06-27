@@ -163,7 +163,7 @@ const Footer = () => (
         </div>
       </div>
     </div>
-    <div className="mx-auto bg-gray-3 px-5 py-12 sm:px-6 md:flex md:items-center md:justify-between lg:px-20">
+    <div className="mx-auto bg-gray-3 px-5 py-6 sm:px-6 md:flex md:items-center md:justify-between lg:px-20">
       <div className="mb-8 flex justify-center space-x-6 md:order-last md:mb-0">
         <a href="#" className="text-dark">
           <span className="sr-only">Facebook</span>
@@ -223,8 +223,8 @@ const Footer = () => (
         </a>
       </div>
       <div className="mt-8 text-center md:order-1 md:mt-0 md:text-left">
-        <span className="mt-2 text-lg font-light text-dark">
-          Copyright © 2017-{new Date().getFullYear()} nexum
+        <span className="mt-2 text-base font-light text-dark">
+          Copyright © {new Date().getFullYear()} nexum
         </span>
       </div>
     </div>
