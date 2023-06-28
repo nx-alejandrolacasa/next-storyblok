@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 type FeatureProps = { blok: FeatureStoryblok }
 
-function Feature({ blok }: FeatureProps) {
+export function Feature({ blok }: FeatureProps) {
   return (
     <div {...storyblokEditable(blok)}>
       <div className="p-6">
@@ -33,5 +33,3 @@ function Feature({ blok }: FeatureProps) {
     </div>
   )
 }
-
-export default Feature

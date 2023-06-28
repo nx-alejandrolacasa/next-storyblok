@@ -5,7 +5,7 @@ import { Button } from '@/components/Button/Button'
 
 type TeaserProps = { blok: TeaserStoryblok }
 
-const Teaser = ({ blok }: TeaserProps) => {
+export function Teaser({ blok }: TeaserProps) {
   return (
     <>
       <h2
@@ -28,5 +28,3 @@ const Teaser = ({ blok }: TeaserProps) => {
     </>
   )
 }
-
-export default Teaser

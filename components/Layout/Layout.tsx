@@ -9,12 +9,12 @@ type LayoutProps = {
   story: ISbStoryData<ConfigStoryblok>
 }
 
-const Layout = ({ children, story }: LayoutProps) => (
-  <div className="flex min-h-screen flex-col justify-between font-source">
-    <Header blok={story?.content} />
-    <main className="w-screen max-w-full flex-1 pt-8">{children}</main>
-    <Footer />
-  </div>
-)
-
-export default Layout
+export function Layout({ children, story }: LayoutProps) {
+  return (
+    <div className="flex min-h-screen flex-col justify-between font-source">
+      <Header blok={story?.content} />
+      <main className="w-screen max-w-full flex-1 pt-8">{children}</main>
+      <Footer />
+    </div>
+  )
+}

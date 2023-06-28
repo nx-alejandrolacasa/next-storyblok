@@ -1,3 +1,4 @@
+'use client'
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react'
 import Link from 'next/link'
 import { ConfigStoryblok } from '@/types/sb-types'
