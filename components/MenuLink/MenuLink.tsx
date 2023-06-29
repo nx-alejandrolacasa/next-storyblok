@@ -8,7 +8,7 @@ export function MenuLink({ blok }: MenuLinkProps) {
   return (
     <Link
       className="text-base font-bold text-dark hover:underline"
-      href={blok.link?.story.path ?? blok.link?.cached_url}
+      href={blok.link?.story?.path ?? blok.link?.cached_url}
       {...storyblokEditable(blok)}
     >
       {blok.name}
