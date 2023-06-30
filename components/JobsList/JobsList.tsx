@@ -25,7 +25,7 @@ export function JobsList({ blok }: JobsListProps) {
       {isLoading && <p>Loading...</p>}
       {error && <p>Error: {error.message}</p>}
       {data && (
-        <ul className="grid auto-rows-fr grid-cols-1 gap-4 align-middle md:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid auto-rows-fr grid-cols-1 gap-4 py-4 align-middle md:grid-cols-2 lg:grid-cols-3">
           {data?.map((job) => (
             <li
               key={job.id}
