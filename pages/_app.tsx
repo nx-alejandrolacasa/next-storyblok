@@ -9,6 +9,7 @@ import MenuLink from '@/components/MenuLink/MenuLink'
 import Layout from '@/components/Layout/Layout'
 import { Button } from '@/components/Button/Button'
 import { Source_Sans_3 } from 'next/font/google'
+import { JobsList } from '@/components/JobsList/JobsList'
 
 const source = Source_Sans_3({
   subsets: ['latin'],
@@ -21,6 +22,7 @@ const components = {
   config: () => null,
   feature: Feature,
   grid: Grid,
+  jobs_list: JobsList,
   layout: Layout,
   menu_link: MenuLink,
   page: Page,

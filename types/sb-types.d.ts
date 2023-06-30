@@ -56,7 +56,6 @@ export type MultilinkStoryblok =
 export interface ButtonStoryblok {
   label: string
   link?: MultilinkStoryblok
-  submit?: boolean
   type: 'primary' | 'secondary' | 'tertiary'
   _uid: string
   component: 'button'
@@ -82,7 +81,7 @@ export interface AssetStoryblok {
 }
 
 export interface FeatureStoryblok {
-  name: string
+  name?: string
   image: AssetStoryblok
   _uid: string
   component: 'feature'
@@ -93,6 +92,23 @@ export interface GridStoryblok {
   columns?: any[]
   _uid: string
   component: 'grid'
+  [k: string]: any
+}
+
+export interface RichtextStoryblok {
+  type: string
+  content?: RichtextStoryblok[]
+  marks?: RichtextStoryblok[]
+  attrs?: any
+  text?: string
+  [k: string]: any
+}
+
+export interface JobsListStoryblok {
+  headline?: string
+  description?: RichtextStoryblok
+  _uid: string
+  component: 'jobs_list'
   [k: string]: any
 }
 
@@ -112,19 +128,11 @@ export interface PageStoryblok {
   [k: string]: any
 }
 
-export interface RichtextStoryblok {
-  type: string
-  content?: RichtextStoryblok[]
-  marks?: RichtextStoryblok[]
-  attrs?: any
-  text?: string
-  [k: string]: any
-}
-
 export interface TeaserStoryblok {
   headline?: string
-  cta?: ButtonStoryblok[]
   description?: RichtextStoryblok
+  cta?: ButtonStoryblok[]
+  asset?: AssetStoryblok
   _uid: string
   component: 'teaser'
   [k: string]: any

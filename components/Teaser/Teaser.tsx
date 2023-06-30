@@ -7,11 +7,8 @@ type TeaserProps = { blok: TeaserStoryblok }
 
 const Teaser = ({ blok }: TeaserProps) => {
   return (
-    <>
-      <h2
-        className="my-5 w-full text-center text-4xl text-dark"
-        {...storyblokEditable(blok)}
-      >
+    <div {...storyblokEditable(blok)}>
+      <h2 className="my-5 w-full text-center text-4xl text-dark">
         {blok.headline}
       </h2>
       {blok.description && (
@@ -25,7 +22,7 @@ const Teaser = ({ blok }: TeaserProps) => {
           <Button blok={blok.cta[0]} />
         </div>
       )}
-    </>
+    </div>
   )
 }
 

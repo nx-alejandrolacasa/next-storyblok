@@ -6,8 +6,9 @@ module.exports = {
   ],
   theme: {
     boxShadow: {
-      'shadow-1': '0px 5px 30px -30px rgba(31, 31, 31, 0.25)',
-      'shadow-2': '0px 4px 14px -1px rgba(0, 0, 0, 0.15)',
+      1: '0px 0px 30px -8px rgba(31, 31, 31, .25)',
+      2: '0px 4px 14px -1px rgba(0, 0, 0, 0.15);',
+      '2-hover': '0px 3px 5px -1px rgba(0, 0, 0, 0.1);',
     },
     colors: {
       'primary-1': '#9bc5cc',
