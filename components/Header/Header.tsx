@@ -19,8 +19,10 @@ export function Header({ blok }: ConfigProps) {
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
               <span className="sr-only">nexum logo</span>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={blok.logo.filename} alt={blok.logo.alt} />
+              {blok.logo && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={blok.logo.filename} alt={blok.logo.alt} />
+              )}
             </Link>
           </div>
           <nav
