@@ -11,7 +11,9 @@ export const ColorGroup = ({ colors }: ColorGroupProps) => {
       {colors.map(({ color, name }) => (
         <Fragment key={color}>
           <span className="text-lg">{name}:</span>
-          <span className={clsx('block h-10 w-20 rounded', color)}></span>
+          <span
+            className={clsx('block h-10 w-20 rounded-elements', color)}
+          ></span>
         </Fragment>
       ))}
     </div>
