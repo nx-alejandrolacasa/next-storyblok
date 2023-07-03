@@ -45,6 +45,7 @@ export const getStaticProps: GetStaticProps = async ({
   return {
     props: {
       config: config?.story ?? false,
+      isConfig: slug === 'config',
       preview: preview ?? false,
       story: data?.story ?? false,
     },

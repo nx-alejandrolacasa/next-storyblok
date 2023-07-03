@@ -19,8 +19,8 @@ module.exports = {
     },
     boxShadow: {
       1: '0px 0px 30px -8px rgba(31, 31, 31, .25)',
-      2: '0px 4px 14px -1px rgba(0, 0, 0, 0.15);',
-      '2-hover': '0px 3px 5px -1px rgba(0, 0, 0, 0.1);',
+      2: '0px 3px 5px -1px rgba(0, 0, 0, 0.1);',
+      '2-hover': '0px 4px 14px -1px rgba(0, 0, 0, 0.15);',
     },
     colors: {
       'primary-1': 'var(--primary-1)',
@@ -32,9 +32,9 @@ module.exports = {
       'tertiary-1': 'var(--tertiary-1)',
       'tertiary-2': 'var(--tertiary-2)',
       'tertiary-3': 'var(--tertiary-3)',
-      accent: 'var(--accent)',
-      light: 'var(--light)',
       dark: 'var(--dark)',
+      light: 'var(--light)',
+      accent: 'var(--accent)',
       black: '#000000',
       white: '#FFFFFF',
     },

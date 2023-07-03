@@ -10,6 +10,7 @@ import Layout from '@/components/Layout/Layout'
 import { Button } from '@/components/Button/Button'
 import { JobsList } from '@/components/JobsList/JobsList'
 import { Theme } from '@/components/Theme/Theme'
+import { Config } from '@/components/Config/Config'
 
 const components = {
   button: Button,
@@ -34,7 +35,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Theme blok={pageProps.config?.content} />
       <Layout story={pageProps.config}>
-        <Component {...pageProps} />
+        {pageProps.isConfig ? <Config /> : <Component {...pageProps} />}
       </Layout>
     </>
   )
