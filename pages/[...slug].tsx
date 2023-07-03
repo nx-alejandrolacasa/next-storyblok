@@ -10,7 +10,6 @@ import { getPathsFromLinks } from '@/utils/storyblok'
 
 const Page: NextPage<{ story: ISbStoryData; preview?: boolean }> = ({
   story,
-  preview,
 }) => {
   const sbState = useStoryblokState(story, {})
 
@@ -39,6 +38,6 @@ export const getStaticPaths: GetStaticPaths = async ({ locales = ['en'] }) => {
   }
 }
 
-export { getStaticProps } from '@/lib/storyblok'
+export { getStaticProps } from '@/utils/next'
 
 export default Page

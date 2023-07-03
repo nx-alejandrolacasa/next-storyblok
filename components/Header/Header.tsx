@@ -1,18 +1,17 @@
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react'
 import Link from 'next/link'
 import { ConfigStoryblok } from '@/types/sb-types'
-import { Logo } from '@/components/Logo/Logo'
 
 type ConfigProps = { blok: ConfigStoryblok }
 
-function Header({ blok }: ConfigProps) {
+export function Header({ blok }: ConfigProps) {
   if (!blok) {
     return null
   }
 
   return (
     <header
-      className="relative border-b-2 border-gray-3 bg-white"
+      className="relative border-b-2 border-tertiary-3 bg-white"
       {...storyblokEditable(blok)}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -20,7 +19,8 @@ function Header({ blok }: ConfigProps) {
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
               <span className="sr-only">nexum logo</span>
-              <Logo />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={blok.logo.filename} alt={blok.logo.alt} />
             </Link>
           </div>
           <nav
@@ -36,4 +36,3 @@ function Header({ blok }: ConfigProps) {
     </header>
   )
 }
-export default Header

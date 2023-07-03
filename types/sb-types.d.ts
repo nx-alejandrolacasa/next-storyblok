@@ -62,13 +62,6 @@ export interface ButtonStoryblok {
   [k: string]: any
 }
 
-export interface ConfigStoryblok {
-  header_menu?: MenuLinkStoryblok[]
-  _uid: string
-  component: 'config'
-  [k: string]: any
-}
-
 export interface AssetStoryblok {
   alt?: string
   copyright?: string
@@ -77,6 +70,21 @@ export interface AssetStoryblok {
   name: string
   title?: string
   focus?: string
+  [k: string]: any
+}
+
+export interface ConfigStoryblok {
+  company_short: string
+  company_long: string
+  logo: AssetStoryblok
+  social_buttons?: any
+  facebook?: MultilinkStoryblok
+  instagram?: MultilinkStoryblok
+  twitter?: MultilinkStoryblok
+  github?: MultilinkStoryblok
+  header_menu?: MenuLinkStoryblok[]
+  _uid: string
+  component: 'config'
   [k: string]: any
 }
 

@@ -8,7 +8,6 @@ import {
 
 const HomePage: NextPage<{ story: ISbStoryData; preview?: boolean }> = ({
   story,
-  preview,
 }) => {
   const sbState = useStoryblokState(story, {})
 
@@ -24,6 +23,6 @@ const HomePage: NextPage<{ story: ISbStoryData; preview?: boolean }> = ({
   )
 }
 
-export { getStaticProps } from '@/lib/storyblok'
+export { getStaticProps } from '@/utils/next'
 
 export default HomePage

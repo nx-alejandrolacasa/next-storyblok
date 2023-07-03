@@ -11,7 +11,7 @@ function Feature({ blok }: FeatureProps) {
         <div className="h-36 lg:h-48">
           <Image
             alt="feature image"
-            className="mb-8 h-full w-auto rounded-xl object-center"
+            className="mb-8 h-full w-auto rounded object-center"
             height={533}
             src={`${blok.image.filename}/m/`}
             width={800}

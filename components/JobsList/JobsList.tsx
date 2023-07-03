@@ -29,7 +29,7 @@ export function JobsList({ blok }: JobsListProps) {
           {data?.map((job) => (
             <li
               key={job.id}
-              className="flex flex-col justify-center rounded-md shadow-2 transition-all hover:shadow-2-hover"
+              className="flex flex-col justify-center rounded shadow-2 transition-all hover:shadow-2-hover"
             >
               <Link href="#" className="h-full w-full p-4">
                 <p className="font-bold">{job.name}</p>

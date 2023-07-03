@@ -8,14 +8,8 @@ import Feature from '@/components/Feature/Feature'
 import MenuLink from '@/components/MenuLink/MenuLink'
 import Layout from '@/components/Layout/Layout'
 import { Button } from '@/components/Button/Button'
-import { Source_Sans_3 } from 'next/font/google'
 import { JobsList } from '@/components/JobsList/JobsList'
-
-const source = Source_Sans_3({
-  subsets: ['latin'],
-  variable: '--font-source',
-  weight: ['400', '700', '900'],
-})
+import { Theme } from '@/components/Theme/Theme'
 
 const components = {
   button: Button,
@@ -38,14 +32,10 @@ storyblokInit({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
+      <Theme blok={pageProps.config?.content} />
       <Layout story={pageProps.config}>
         <Component {...pageProps} />
       </Layout>
-      <style jsx global>{`
-        :root {
-          --font-source: ${source.style.fontFamily};
-        }
-      `}</style>
     </>
   )
 }
