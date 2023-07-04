@@ -23,13 +23,10 @@ export const getStaticProps: GetStaticProps = async ({
     version: preview ? 'draft' : 'published',
   }
 
-  const { data } = await storyblokApi.get(
-    `cdn/stories/${slug && slug !== 'config' ? slug : 'home'}`,
-    {
-      ...sbParams,
-      resolve_links: 'url',
-    }
-  )
+  const { data } = await storyblokApi.get(`cdn/stories/${slug ?? 'home'}`, {
+    ...sbParams,
+    resolve_links: 'url',
+  })
 
   const { data: config } = await storyblokApi.get('cdn/stories/config', {
     ...sbParams,

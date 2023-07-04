@@ -11,14 +11,16 @@ import { Button } from '@/components/Button/Button'
 import { JobsList } from '@/components/JobsList/JobsList'
 import { Theme } from '@/components/Theme/Theme'
 import { Config } from '@/components/Config/Config'
+import { MenuGroup } from '@/components/MenuGroup/MenuGroup'
 
 const components = {
   button: Button,
-  config: () => null,
+  config: Config,
   feature: Feature,
   grid: Grid,
   jobs_list: JobsList,
   layout: Layout,
+  menu_group: MenuGroup,
   menu_link: MenuLink,
   page: Page,
   teaser: Teaser,
@@ -35,7 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Theme blok={pageProps.config?.content} />
       <Layout story={pageProps.config}>
-        {pageProps.isConfig ? <Config /> : <Component {...pageProps} />}
+        <Component {...pageProps} />
       </Layout>
     </>
   )

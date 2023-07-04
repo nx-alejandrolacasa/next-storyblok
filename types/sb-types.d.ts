@@ -74,15 +74,17 @@ export interface AssetStoryblok {
 }
 
 export interface ConfigStoryblok {
+  footer_menu: MenuGroupStoryblok[]
   company_short: string
   company_long: string
   logo: AssetStoryblok
-  social_buttons?: any
+  colors?: any
+  border_radius: 'none' | '0.25rem' | '0.5rem' | '0.75rem' | '9999px'
   facebook?: MultilinkStoryblok
   instagram?: MultilinkStoryblok
   twitter?: MultilinkStoryblok
   github?: MultilinkStoryblok
-  header_menu?: MenuLinkStoryblok[]
+  header_menu: MenuLinkStoryblok[]
   _uid: string
   component: 'config'
   [k: string]: any
@@ -117,6 +119,15 @@ export interface JobsListStoryblok {
   description?: RichtextStoryblok
   _uid: string
   component: 'jobs_list'
+  [k: string]: any
+}
+
+export interface MenuGroupStoryblok {
+  name: string
+  link?: MultilinkStoryblok
+  sublinks: MenuLinkStoryblok[]
+  _uid: string
+  component: 'menu_group'
   [k: string]: any
 }
 

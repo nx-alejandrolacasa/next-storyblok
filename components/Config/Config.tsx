@@ -4,8 +4,8 @@ import { ColorGroup } from '@/components/Config/ColorGroup'
 
 export function Config() {
   return (
-    <div className="mx-auto mb-8 px-8 lg:container">
-      <h2 className="my-10">Colors</h2>
+    <div className="mx-auto max-w-7xl flex-1 px-4 pb-20 pt-10 sm:px-6">
+      <h2 className="mb-10">Colors</h2>
       <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
         <ColorGroup
           colors={[

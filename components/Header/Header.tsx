@@ -26,7 +26,7 @@ export function Header({ blok }: ConfigProps) {
             </Link>
           </div>
           <nav
-            className="flex flex-1 items-center justify-end gap-5 md:gap-10 lg:w-0"
+            className="flex flex-1 items-center justify-end gap-5 font-bold md:gap-10 lg:w-0"
             {...storyblokEditable(blok)}
           >
             {blok.header_menu?.map((nestedBlok) => (

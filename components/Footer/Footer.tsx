@@ -3,6 +3,7 @@ import { Facebook } from '@/components/Icons/Facebook'
 import { Instagram } from '@/components/Icons/Instagram'
 import { Twitter } from '@/components/Icons/Twitter'
 import { GitHub } from '@/components/Icons/GitHub'
+import { StoryblokComponent } from '@storyblok/react'
 
 type ConfigProps = { blok: ConfigStoryblok }
 
@@ -19,164 +20,11 @@ export function Footer({ blok }: ConfigProps) {
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className=" mx-auto max-w-7xl p-12 lg:px-20 lg:py-16">
+      <div className="mx-auto max-w-7xl p-12 lg:px-20 lg:py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 md:gap-8">
-          <div className="mt-12 md:mt-0">
-            <h3 className="text-3xl font-semibold uppercase tracking-wider text-dark">
-              Support
-            </h3>
-            <ul role="list" className="mt-4 space-y-4">
-              <li>
-                <a
-                  href="#"
-                  className="text-base font-normal text-dark hover:underline"
-                >
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-base font-normal text-dark hover:underline"
-                >
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-base font-normal text-dark hover:underline"
-                >
-                  Guides
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-base font-normal text-dark hover:underline"
-                >
-                  API Status
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="mt-12 md:mt-0">
-            <h3 className="text-3xl font-semibold uppercase tracking-wider text-dark">
-              Support
-            </h3>
-            <ul role="list" className="mt-4 space-y-4">
-              <li>
-                <a
-                  href="#"
-                  className="text-base font-normal text-dark hover:underline"
-                >
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-base font-normal text-dark hover:underline"
-                >
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-base font-normal text-dark hover:underline"
-                >
-                  Guides
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-base font-normal text-dark hover:underline"
-                >
-                  API Status
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="mt-12 md:mt-0">
-            <h3 className="text-3xl font-semibold uppercase tracking-wider text-dark">
-              Support
-            </h3>
-            <ul role="list" className="mt-4 space-y-4">
-              <li>
-                <a
-                  href="#"
-                  className="text-base font-normal text-dark hover:underline"
-                >
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-base font-normal text-dark hover:underline"
-                >
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-base font-normal text-dark hover:underline"
-                >
-                  Guides
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-base font-normal text-dark hover:underline"
-                >
-                  API Status
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="mt-12 md:mt-0">
-            <h3 className="text-3xl font-semibold uppercase tracking-wider text-dark">
-              Support
-            </h3>
-            <ul role="list" className="mt-4 space-y-4">
-              <li>
-                <a
-                  href="#"
-                  className="text-base font-normal text-dark hover:underline"
-                >
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-base font-normal text-dark hover:underline"
-                >
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-base font-normal text-dark hover:underline"
-                >
-                  Guides
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-base font-normal text-dark hover:underline"
-                >
-                  API Status
-                </a>
-              </li>
-            </ul>
-          </div>
+          {blok.footer_menu.map((nestedBlok) => (
+            <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+          ))}
         </div>
       </div>
       <div className="mx-auto bg-tertiary-3 px-5 py-6 sm:px-6 md:flex md:items-center md:justify-between lg:px-20">

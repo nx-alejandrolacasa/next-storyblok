@@ -12,7 +12,7 @@ type LayoutProps = {
 const Layout = ({ children, story }: LayoutProps) => (
   <div className="flex min-h-screen flex-col justify-between font-source">
     <Header blok={story?.content} />
-    <main className="w-screen max-w-full flex-1 pt-8">{children}</main>
+    <main className="relative">{children}</main>
     <Footer blok={story?.content} />
   </div>
 )

@@ -1,15 +1,21 @@
 import { storyblokEditable } from '@storyblok/react'
 import Link from 'next/link'
 import { MenuLinkStoryblok } from '@/types/sb-types'
+import clsx from 'clsx'
 
-type MenuLinkProps = { blok: MenuLinkStoryblok }
+type MenuLinkProps = {
+  blok: MenuLinkStoryblok
+  className?: string
+}
 
-function MenuLink({ blok }: MenuLinkProps) {
+function MenuLink({ blok, className }: MenuLinkProps) {
+  const href = blok.link?.story?.url ?? blok.link?.url
+
   return (
     <Link
-      href={blok.link?.cached_url}
+      href={href}
+      className={clsx('text-base text-dark hover:underline', className)}
       {...storyblokEditable(blok)}
-      className="text-base font-bold text-dark hover:underline"
     >
       {blok.name}
     </Link>
