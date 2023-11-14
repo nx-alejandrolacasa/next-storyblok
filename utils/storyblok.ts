@@ -2,21 +2,6 @@ import { draftMode } from 'next/headers'
 import { getStoryblokApi } from '@storyblok/react/rsc'
 import { ISbAlternateObject, ISbStoriesParams } from '@storyblok/react'
 
-export function getPathsFromLinks(
-  links: Record<string, ISbAlternateObject>,
-  locales: string[]
-) {
-  return Object.keys(links)
-    .map((key) => links[key])
-    .filter((link) => !link.is_folder && link.slug !== 'home' && link.published)
-    .flatMap((link) =>
-      locales.map((locale) => ({
-        params: { slug: link.slug.split('/') },
-        locale,
-      }))
-    )
-}
-
 export function getParamsFromLinks(links: Record<string, ISbAlternateObject>) {
   return Object.keys(links)
     .map((key) => links[key])
@@ -30,7 +15,7 @@ export function getParamsFromLinks(links: Record<string, ISbAlternateObject>) {
     .map((link) => ({ slug: link.slug.split('/') }))
 }
 
-export async function fetchData(slug?: string) {
+export async function fetchStoriesBySlug(slug?: string) {
   const { isEnabled } = draftMode()
   let sbParams: ISbStoriesParams = {
     version: isEnabled ? 'draft' : 'published',
