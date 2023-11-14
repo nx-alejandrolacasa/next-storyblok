@@ -15,7 +15,7 @@ export function getParamsFromLinks(links: Record<string, ISbAlternateObject>) {
     .map((link) => ({ slug: link.slug.split('/') }))
 }
 
-export async function fetchStoriesBySlug(slug?: string) {
+export async function fetchStoriesBySlug(slug?: string | string[]) {
   const { isEnabled } = draftMode()
   let sbParams: ISbStoriesParams = {
     version: isEnabled ? 'draft' : 'published',
@@ -23,5 +23,8 @@ export async function fetchStoriesBySlug(slug?: string) {
   }
 
   const storyblokApi = getStoryblokApi()
-  return storyblokApi.get(`cdn/stories/${slug ?? 'home'}`, sbParams)
+  return storyblokApi.get(
+    `cdn/stories/${Array.isArray(slug) ? slug.join('/') : slug ?? 'home'}`,
+    sbParams
+  )
 }
