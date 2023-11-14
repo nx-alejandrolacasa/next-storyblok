@@ -4,6 +4,7 @@ import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
 import StoryblokProvider from '@/components/StoryblokProvider/StoryblokProvider'
 import '@/app/globals.css'
 import Link from 'next/link'
+import { Metadata } from 'next'
 
 const font = Inter({
   subsets: ['latin'],
@@ -14,6 +15,11 @@ storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
   use: [apiPlugin],
 })
+
+export const metadata: Metadata = {
+  title: '▲ Next.js 14 + Storyblok',
+  description: 'Next.js 14 application using Storyblok as CMS',
+}
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

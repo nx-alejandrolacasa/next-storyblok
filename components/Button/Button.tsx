@@ -15,9 +15,9 @@ export function Button({ blok }: ButtonProps) {
   const props = {
     className: clsx(
       'rounded-md px-5 py-3 text-center text-base font-semibold text-white transition-all',
-      blok.type === 'primary' && 'bg-sky-500 hover:bg-sky-700',
-      blok.type === 'secondary' && 'bg-amber-500 hover:bg-amber-700',
-      blok.type === 'tertiary' && 'bg-rose-500 hover:bg-rose-700'
+      blok.type === 'primary' && 'bg-sky-500 hover:bg-sky-600',
+      blok.type === 'secondary' && 'bg-amber-500 hover:bg-amber-600',
+      blok.type === 'tertiary' && 'bg-rose-500 hover:bg-rose-600'
     ),
   }
 
