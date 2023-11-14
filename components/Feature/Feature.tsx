@@ -17,13 +17,13 @@ export function Feature({ blok }: FeatureProps) {
             width={800}
           />
         </div>
-        <h3 className="mx-auto my-4 text-3xl leading-none tracking-tighter text-gray-700">
+        <h3 className="mx-auto my-4 text-3xl leading-none tracking-tighter text-slate-700">
           {blok.name}
         </h3>
         <div className="mt-4">
           <a
             href="#"
-            className="mt-4 inline-flex items-center text-sky-700 hover:underline lg:mb-0"
+            className="mt-4 inline-flex items-center text-slate-500 hover:underline lg:mb-0"
             title="read more"
           >
             Read More &raquo;

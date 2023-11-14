@@ -28,23 +28,27 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <body
           className={`${font.className} flex min-h-screen flex-col justify-between`}
         >
-          <header>
-            <nav className="container mx-auto flex h-10 items-center justify-end gap-4">
-              <Link className="hover:underline" href="/">
+          <header className="h-20 bg-gradient-to-b from-slate-300">
+            <nav className="container mx-auto flex h-full items-center justify-end gap-4">
+              <Link className="text-slate-800 hover:underline" href="/">
                 Home
               </Link>
-              <Link className="hover:underline" href="/about-us">
+              <Link className="text-slate-800 hover:underline" href="/about-us">
                 About us
               </Link>
-              <Link className="hover:underline" href="/services">
+              <Link className="text-slate-800 hover:underline" href="/services">
                 Services
               </Link>
-              <Link className="hover:underline" href="/career/work-with-us">
+              <Link
+                className="text-slate-800 hover:underline"
+                href="/career/work-with-us"
+              >
                 Work with us
               </Link>
             </nav>
           </header>
           {children}
+          <footer className="h-20 bg-gradient-to-t from-slate-300"></footer>
         </body>
       </html>
     </StoryblokProvider>
