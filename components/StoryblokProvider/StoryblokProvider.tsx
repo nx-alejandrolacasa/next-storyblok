@@ -5,7 +5,6 @@ import { Button } from '@/components/Button/Button'
 import { Config } from '@/components/Config/Config'
 import { Feature } from '@/components/Feature/Feature'
 import { Grid } from '@/components/Grid/Grid'
-import { Layout } from '@/components/Layout/Layout'
 import { MenuLink } from '@/components/MenuLink/MenuLink'
 import { Page } from '@/components/Page/Page'
 import { Teaser } from '@/components/Teaser/Teaser'
@@ -15,7 +14,6 @@ const components = {
   config: Config,
   feature: Feature,
   grid: Grid,
-  layout: Layout,
   menu_link: MenuLink,
   page: Page,
   teaser: Teaser,
