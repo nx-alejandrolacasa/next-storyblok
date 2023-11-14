@@ -1,10 +1,5 @@
 export type MultilinkStoryblok =
   | {
-      cached_url?: string
-      linktype?: string
-      [k: string]: any
-    }
-  | {
       id?: string
       cached_url?: string
       anchor?: string
@@ -55,10 +50,22 @@ export type MultilinkStoryblok =
 
 export interface ButtonStoryblok {
   label: string
-  link?: MultilinkStoryblok
+  link?: Exclude<
+    MultilinkStoryblok,
+    { linktype?: 'email' } | { linktype?: 'asset' }
+  >
+  submit?: boolean
   type: 'primary' | 'secondary' | 'tertiary'
   _uid: string
   component: 'button'
+  [k: string]: any
+}
+
+export interface ConfigStoryblok {
+  header_menu?: MenuLinkStoryblok[]
+  footer_menu?: MenuLinkStoryblok[]
+  _uid: string
+  component: 'config'
   [k: string]: any
 }
 
@@ -73,23 +80,6 @@ export interface AssetStoryblok {
   [k: string]: any
 }
 
-export interface ConfigStoryblok {
-  footer_menu: MenuGroupStoryblok[]
-  company_short: string
-  company_long: string
-  logo: AssetStoryblok
-  colors?: any
-  border_radius: 'none' | '0.25rem' | '0.5rem' | '0.75rem' | '9999px'
-  facebook?: MultilinkStoryblok
-  instagram?: MultilinkStoryblok
-  twitter?: MultilinkStoryblok
-  github?: MultilinkStoryblok
-  header_menu: MenuLinkStoryblok[]
-  _uid: string
-  component: 'config'
-  [k: string]: any
-}
-
 export interface FeatureStoryblok {
   name?: string
   image: AssetStoryblok
@@ -99,9 +89,44 @@ export interface FeatureStoryblok {
 }
 
 export interface GridStoryblok {
-  columns?: any[]
+  columns?: (
+    | ButtonStoryblok
+    | ConfigStoryblok
+    | FeatureStoryblok
+    | GridStoryblok
+    | MenuLinkStoryblok
+    | PageStoryblok
+    | TeaserStoryblok
+  )[]
   _uid: string
   component: 'grid'
+  [k: string]: any
+}
+
+export interface MenuLinkStoryblok {
+  name?: string
+  link?: Exclude<
+    MultilinkStoryblok,
+    { linktype?: 'email' } | { linktype?: 'asset' }
+  >
+  _uid: string
+  component: 'menu_link'
+  [k: string]: any
+}
+
+export interface PageStoryblok {
+  body?: (
+    | ButtonStoryblok
+    | ConfigStoryblok
+    | FeatureStoryblok
+    | GridStoryblok
+    | MenuLinkStoryblok
+    | PageStoryblok
+    | TeaserStoryblok
+  )[]
+  _uid: string
+  component: 'page'
+  uuid?: string
   [k: string]: any
 }
 
@@ -114,44 +139,10 @@ export interface RichtextStoryblok {
   [k: string]: any
 }
 
-export interface JobsListStoryblok {
-  headline?: string
-  description?: RichtextStoryblok
-  _uid: string
-  component: 'jobs_list'
-  [k: string]: any
-}
-
-export interface MenuGroupStoryblok {
-  name: string
-  link?: MultilinkStoryblok
-  sublinks: MenuLinkStoryblok[]
-  _uid: string
-  component: 'menu_group'
-  [k: string]: any
-}
-
-export interface MenuLinkStoryblok {
-  name?: string
-  link?: MultilinkStoryblok
-  _uid: string
-  component: 'menu_link'
-  [k: string]: any
-}
-
-export interface PageStoryblok {
-  body?: any[]
-  _uid: string
-  component: 'page'
-  uuid?: string
-  [k: string]: any
-}
-
 export interface TeaserStoryblok {
   headline?: string
-  description?: RichtextStoryblok
   cta?: ButtonStoryblok[]
-  asset?: AssetStoryblok
+  description?: RichtextStoryblok
   _uid: string
   component: 'teaser'
   [k: string]: any

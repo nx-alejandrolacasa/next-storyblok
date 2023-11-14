@@ -1,4 +1,4 @@
-import { getPathsFromLinks } from './storyblok'
+import { getParamsFromLinks, getPathsFromLinks } from './storyblok'
 
 describe('getPathsFromLinks', () => {
   it('should return an array of paths', () => {
@@ -6,12 +6,12 @@ describe('getPathsFromLinks', () => {
       '1234': {
         is_folder: false,
         published: true,
-        slug: 'pages/foo',
+        slug: '_pages/foo',
       },
       '5678': {
         is_folder: false,
         published: true,
-        slug: 'pages/bar',
+        slug: '_pages/bar',
       },
     }
     const locales = ['en', 'de']
@@ -31,7 +31,7 @@ describe('getPathsFromLinks', () => {
       '1234': {
         is_folder: false,
         published: true,
-        slug: 'pages/foo',
+        slug: '_pages/foo',
       },
       '5678': {
         is_folder: false,
@@ -54,12 +54,12 @@ describe('getPathsFromLinks', () => {
       '1234': {
         is_folder: false,
         published: true,
-        slug: 'pages/foo',
+        slug: '_pages/foo',
       },
       '5678': {
         is_folder: true,
         published: true,
-        slug: 'pages/bar',
+        slug: '_pages/bar',
       },
     }
     const locales = ['en', 'de']
@@ -77,12 +77,12 @@ describe('getPathsFromLinks', () => {
       '1234': {
         is_folder: false,
         published: true,
-        slug: 'pages/foo',
+        slug: '_pages/foo',
       },
       '5678': {
         is_folder: false,
         published: false,
-        slug: 'pages/bar',
+        slug: '_pages/bar',
       },
     }
     const locales = ['en', 'de']
@@ -93,5 +93,26 @@ describe('getPathsFromLinks', () => {
 
     // @ts-ignore
     expect(getPathsFromLinks(links, locales)).toEqual(expected)
+  })
+})
+
+describe('getParamsFromLinks', () => {
+  it('should return an array of paths', () => {
+    const links = {
+      '1234': {
+        is_folder: false,
+        published: true,
+        slug: 'pages/foo',
+      },
+      '5678': {
+        is_folder: false,
+        published: true,
+        slug: 'pages/bar',
+      },
+    }
+    const expected = [{ slug: ['pages', 'foo'] }, { slug: ['pages', 'bar'] }]
+
+    // @ts-ignore
+    expect(getParamsFromLinks(links)).toEqual(expected)
   })
 })

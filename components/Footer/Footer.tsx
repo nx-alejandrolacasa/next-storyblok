@@ -22,7 +22,7 @@ export function Footer({ blok }: ConfigProps) {
       </h2>
       <div className="mx-auto max-w-7xl p-12 lg:px-20 lg:py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 md:gap-8">
-          {blok.footer_menu.map((nestedBlok) => (
+          {blok.footer_menu?.map((nestedBlok) => (
             <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
           ))}
         </div>

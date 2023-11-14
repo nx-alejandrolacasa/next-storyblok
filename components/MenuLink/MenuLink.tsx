@@ -8,7 +8,7 @@ type MenuLinkProps = {
   className?: string
 }
 
-function MenuLink({ blok, className }: MenuLinkProps) {
+export function MenuLink({ blok, className }: MenuLinkProps) {
   const href = blok.link?.story?.url ?? blok.link?.url
 
   return (
@@ -21,4 +21,3 @@ function MenuLink({ blok, className }: MenuLinkProps) {
     </Link>
   )
 }
-export default MenuLink

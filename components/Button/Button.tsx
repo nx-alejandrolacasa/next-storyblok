@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { storyblokEditable } from '@storyblok/react'
 import { AnchorHTMLAttributes } from 'react'

@@ -7,7 +7,16 @@ const nextConfig = {
     defaultLocale: 'en',
   },
   images: {
-    domains: ['images.unsplash.com', 'a.storyblok.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'a.storyblok.com',
+      },
+    ],
   },
   output: 'standalone',
 }

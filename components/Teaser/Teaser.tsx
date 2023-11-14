@@ -5,7 +5,7 @@ import { Button } from '@/components/Button/Button'
 
 type TeaserProps = { blok: TeaserStoryblok }
 
-const Teaser = ({ blok }: TeaserProps) => {
+export const Teaser = ({ blok }: TeaserProps) => {
   return (
     <div {...storyblokEditable(blok)}>
       <h2 className="my-5 w-full text-center text-4xl text-dark">
@@ -25,5 +25,3 @@ const Teaser = ({ blok }: TeaserProps) => {
     </div>
   )
 }
-
-export default Teaser
