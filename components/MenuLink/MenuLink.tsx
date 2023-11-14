@@ -14,7 +14,7 @@ export function MenuLink({ blok, className }: MenuLinkProps) {
   return (
     <Link
       href={href}
-      className={clsx('text-base text-dark hover:underline', className)}
+      className={clsx('text-base text-gray-700 hover:underline', className)}
       {...storyblokEditable(blok)}
     >
       {blok.name}

@@ -8,12 +8,12 @@ type TeaserProps = { blok: TeaserStoryblok }
 export const Teaser = ({ blok }: TeaserProps) => {
   return (
     <div {...storyblokEditable(blok)}>
-      <h2 className="my-5 w-full text-center text-4xl text-dark">
+      <h2 className="my-5 w-full text-center text-4xl text-gray-700">
         {blok.headline}
       </h2>
       {blok.description && (
         <RichText
-          className="text-center text-base text-dark"
+          className="text-center text-base text-gray-700"
           text={blok.description}
         />
       )}
