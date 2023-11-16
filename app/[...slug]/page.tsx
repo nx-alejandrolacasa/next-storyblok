@@ -1,4 +1,3 @@
-// @ts-ignore
 import { getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc'
 import { fetchStoriesBySlug, getParamsFromLinks } from '@/utils/storyblok'
 
@@ -14,6 +13,5 @@ export async function generateStaticParams() {
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const { data } = await fetchStoriesBySlug(params.slug)
-
   return <StoryblokStory story={data.story} bridgeOptions={{}} />
 }
