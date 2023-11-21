@@ -18,6 +18,7 @@ export async function GET(request: NextRequest) {
   // Enable Preview Mode by setting the cookies
   draftMode().enable()
 
+  // Allow Storyblok's iframe to access the cookies
   cookies()
     .getAll()
     .forEach((cookie) => {
