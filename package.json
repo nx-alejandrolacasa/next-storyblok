@@ -16,7 +16,7 @@
     "sb:types": "run-s sb:pull-components sb:generate-types sb:eslint-types sb:prettier-types"
   },
   "dependencies": {
-    "@storyblok/react": "~2.4.8",
+    "@storyblok/react": "~3.0.6",
     "colord": "~2.9.3",
     "fast-xml-parser": "~4.3.3",
     "isomorphic-dompurify": "~2.2.0",
@@ -40,7 +40,7 @@
     "postcss": "~8.4.33",
     "prettier": "~3.2.2",
     "prettier-plugin-tailwindcss": "~0.5.11",
-    "storyblok": "~3.25.3",
+    "storyblok": "~3.26.0",
     "storyblok-generate-ts": "~2.0.1",
     "tailwindcss": "~3.4.1",
     "typescript": "~5.3.3",
