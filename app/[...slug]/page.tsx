@@ -8,10 +8,10 @@ export async function generateStaticParams() {
     {
       version: 'published',
       cv: Date.now(),
-    },
-    {
-      cache: 'no-store',
     }
+    // {
+    //   cache: 'no-store',
+    // }
   )
 
   return getParamsFromLinks(data.links)

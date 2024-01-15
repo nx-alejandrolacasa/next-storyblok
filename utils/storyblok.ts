@@ -30,7 +30,7 @@ export async function fetchStoriesBySlug(
   const storyblokApi = getStoryblokApi()
   return storyblokApi.get(
     `cdn/stories/${Array.isArray(slug) ? slug.join('/') : slug ?? 'home'}`,
-    sbParams,
-    fetchOptions
+    sbParams
+    // fetchOptions
   )
 }
