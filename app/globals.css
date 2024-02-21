@@ -25,6 +25,6 @@
   }
 
   .nx-rich-text a {
-    @apply text-primary underline;
+    @apply text-slate-800 underline;
   }
 }
