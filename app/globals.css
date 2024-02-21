@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .nx-rich-text ol {
+    @apply list-decimal;
+  }
+
+  .nx-rich-text ul {
+    @apply list-disc;
+  }
+
+  .nx-rich-text ul,
+  .nx-rich-text ol {
+    @apply list-inside;
+  }
+
+  .nx-rich-text li > * {
+    @apply inline;
+  }
+
+  .nx-rich-text p:empty {
+    @apply pb-4;
+  }
+
+  .nx-rich-text a {
+    @apply text-primary underline;
+  }
+}
