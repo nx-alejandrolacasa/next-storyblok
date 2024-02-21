@@ -45,10 +45,18 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               >
                 Work with us
               </Link>
+              <Link className="text-slate-800 hover:underline" href="/login">
+                Login
+              </Link>
             </nav>
           </header>
-          {children}
-          <footer className="h-20 bg-gradient-to-t from-slate-300"></footer>
+          <main className="flex-1 py-8">{children}</main>
+          <footer className="flex h-10 justify-center bg-gradient-to-t from-slate-300 px-8">
+            <p className="text-sm text-slate-500">
+              Copyright &copy; {new Date().getFullYear()} &bull; Alejandro G.
+              Lacasa
+            </p>
+          </footer>
         </body>
       </html>
     </StoryblokProvider>

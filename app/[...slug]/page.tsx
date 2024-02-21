@@ -3,16 +3,10 @@ import { fetchStoriesBySlug, getParamsFromLinks } from '@/utils/storyblok'
 
 export async function generateStaticParams() {
   const storyblokApi = getStoryblokApi()
-  const { data } = await storyblokApi.get(
-    'cdn/links/',
-    {
-      version: 'published',
-      cv: Date.now(),
-    }
-    // {
-    //   cache: 'no-store',
-    // }
-  )
+  const { data } = await storyblokApi.get('cdn/links/', {
+    version: 'published',
+    cv: Date.now(),
+  })
 
   return getParamsFromLinks(data.links)
 }
