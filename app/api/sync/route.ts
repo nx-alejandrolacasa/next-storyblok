@@ -1,7 +1,9 @@
 import { NextRequest } from 'next/server'
 
 export async function POST(request: NextRequest) {
-  console.log(request.body)
+  const body = await request.json()
 
-  return new Response(request.body)
+  console.log(body)
+
+  return new Response(body)
 }
