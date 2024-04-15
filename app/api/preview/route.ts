@@ -2,6 +2,8 @@ import { NextRequest } from 'next/server'
 import { cookies, draftMode } from 'next/headers'
 import { redirect } from 'next/navigation'
 
+export const runtime = 'nodejs'
+
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams
   const slug = searchParams.get('slug')
