@@ -24,8 +24,8 @@ dependencies:
     specifier: ~1.0.2
     version: 1.0.2(@types/react@18.2.78)(react@18.2.0)
   '@storyblok/react':
-    specifier: ~3.0.9
-    version: 3.0.9(react-dom@18.2.0)(react@18.2.0)
+    specifier: ~3.0.10
+    version: 3.0.10(react-dom@18.2.0)(react@18.2.0)
   class-variance-authority:
     specifier: ~0.7.0
     version: 0.7.0
@@ -38,6 +38,9 @@ dependencies:
   next:
     specifier: ~14.2.1
     version: 14.2.1(react-dom@18.2.0)(react@18.2.0)
+  next-view-transitions:
+    specifier: ~0.1.0
+    version: 0.1.0(next@14.2.1)(react-dom@18.2.0)(react@18.2.0)
   react:
     specifier: ~18.2.0
     version: 18.2.0
@@ -1221,19 +1224,19 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /@storyblok/js@3.0.7:
-    resolution: {integrity: sha512-m6MpUhjEpDWMKftyjJhTkthd/I6LZ9xhuT/Wxa1e99Cf4niVC5jgMVPQ5tOsUgn3D8BKNL+6PI3hEj5dGKB9xw==}
+  /@storyblok/js@3.0.8:
+    resolution: {integrity: sha512-JY+abbswBId84Ubr0yRwNpq5Klf9546Ia2Qs1pn6en5Trz8o6EcBJIwxvR6evjJ0Vp2cLKT7MV1yfGLAtnzycA==}
     dependencies:
-      storyblok-js-client: 6.7.1
+      storyblok-js-client: 6.7.2
     dev: false
 
-  /@storyblok/react@3.0.9(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-N362hE+sBH3QebCrJtqgzGI2l+Dre8hfNJmAJvEtx1bEtfvu6hcA5ch5eQjjILxgDMwtseA0BnCXP7zoqJ2KCg==}
+  /@storyblok/react@3.0.10(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-7cyUdCoT/kTXFJLojPhqhguvcTjvIizPh3wf90Q99zrD7quMALX9E6Ag/gSGkyWdMTQ7Wcbh2zEQaZxEDx0FRg==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
-      '@storyblok/js': 3.0.7
+      '@storyblok/js': 3.0.8
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
@@ -4083,6 +4086,18 @@ packages:
     resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
     dev: true
 
+  /next-view-transitions@0.1.0(next@14.2.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-9qYLfoS5GS2erBcERxPWXM1E2SpXJ+NxyDdtyBk+f7x9KQlO8cNACRbdtdz1KfY+k2tGsAa39/MUBuPlfbK8nQ==}
+    peerDependencies:
+      next: ^14.2.1
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      next: 14.2.1(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
   /next@14.2.1(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-SF3TJnKdH43PMkCcErLPv+x/DY1YCklslk3ZmwaVoyUfDgHKexuKlf9sEfBQ69w+ue8jQ3msLb+hSj1T19hGag==}
     engines: {node: '>=18.17.0'}
@@ -5148,6 +5163,11 @@ packages:
 
   /storyblok-js-client@6.7.1:
     resolution: {integrity: sha512-VOobZkor6BESji2MJUuO5jTIZeCWMUMR2LZtdSEEAtUDUfKwA88lGqDVMQqtWZ8nD7NzhZ6S7qvdv5Or9HZXRw==}
+    dev: true
+
+  /storyblok-js-client@6.7.2:
+    resolution: {integrity: sha512-5+cCZQhvIPSP5fin7jMUyyiAfV3FSbhH2q0YmDpb8NqxsY0pog6r+igHshVXNHed5yB5AZcVn0Mduao0X1MdBA==}
+    dev: false
 
   /storyblok@3.30.0:
     resolution: {integrity: sha512-3AI6zfjt0+DiOuHPU2fdMBhoq8vw0hLOv8buWVa1lyYx6y7FRLJ0WZu/+/rpYy/QqPWIWg8/3GMjlM5VIS7pGA==}

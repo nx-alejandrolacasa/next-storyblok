@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import { storyblokEditable } from '@storyblok/react'
 import { AnchorHTMLAttributes } from 'react'
 import { ButtonStoryblok } from '@/types/sb-types'
