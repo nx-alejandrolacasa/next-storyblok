@@ -13,8 +13,7 @@
     "sb:generate-types": "storyblok-generate-ts source=./types/components.185369.json target=./types/sb-types",
     "sb:eslint-types": "eslint --fix ./types/sb-types.d.ts",
     "sb:prettier-types": "prettier --write ./types/sb-types.d.ts",
-    "sb:types": "run-s sb:pull-components sb:generate-types sb:eslint-types sb:prettier-types",
-    "pages:build": "npx @cloudflare/next-on-pages"
+    "sb:types": "run-s sb:pull-components sb:generate-types sb:eslint-types sb:prettier-types"
   },
   "dependencies": {
     "@conform-to/react": "~1.1.0",

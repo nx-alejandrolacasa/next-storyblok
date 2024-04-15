@@ -3,8 +3,6 @@ import { NextRequest } from 'next/server'
 import { headers } from 'next/headers'
 import { revalidatePath } from 'next/cache'
 
-export const runtime = 'nodejs'
-
 export async function POST(request: NextRequest) {
   const body = await request.json()
   const signature = headers().get('webhook-signature')
