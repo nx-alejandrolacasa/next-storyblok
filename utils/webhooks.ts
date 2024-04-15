@@ -1,4 +1,4 @@
-import crypto from 'crypto'
+import crypto from 'node:crypto'
 
 export function verifySignature(body: any, signature: string) {
   const secret = process.env.STORYBLOK_WEBHOOK_SECRET
