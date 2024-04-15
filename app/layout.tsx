@@ -6,6 +6,8 @@ import '@/app/globals.css'
 import Link from 'next/link'
 import { Metadata } from 'next'
 
+export const runtime = 'edge'
+
 const font = Inter({
   subsets: ['latin'],
   weight: '400',
