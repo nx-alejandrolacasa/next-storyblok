@@ -1,4 +1,4 @@
-FROM node:18-alpine AS base
+FROM node:20-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -19,7 +19,7 @@ RUN \
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /app
-COPY .env.local ./.env
+COPY .env ./.env
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
