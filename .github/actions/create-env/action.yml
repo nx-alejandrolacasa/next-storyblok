@@ -1,0 +1,21 @@
+name: 'Create .env file'
+description: 'Create .env file for building'
+inputs:
+  STORYBLOK_TOKEN:
+    description: Storyblok preview token
+  STORYBLOK_WEBHOOK_SECRET:
+    description: Storyblok webhook secret
+
+runs:
+  using: 'composite'
+  steps:
+    - name: create env file
+      shell: bash
+      run: |
+        touch .env
+        echo STORYBLOK_TOKEN=${{ inputs.STORYBLOK_TOKEN }} >> .env
+        echo STORYBLOK_WEBHOOK_SECRET=${{ inputs.STORYBLOK_WEBHOOK_SECRET }} >> .env
+    - uses: actions/upload-artifact@v4
+      with:
+        name: env-file
+        path: .env
