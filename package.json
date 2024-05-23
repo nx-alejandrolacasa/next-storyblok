@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "dev:https": "next dev --turbo --experimental-https --port 3010",
     "build": "next build",
     "start": "next start",
@@ -12,7 +12,7 @@
     "test:watch": "vitest",
     "sb:pull-components": "storyblok pull-components --space=185369 --path=./types/",
     "sb:generate-types": "storyblok-generate-ts source=./types/components.185369.json target=./types/sb-types",
-    "sb:eslint-types": "eslint --fix ./types/sb-types.d.ts",
+    "sb:eslint-types": "eslint --fix \"./types/sb-types.d.ts\" --no-ignore",
     "sb:prettier-types": "prettier --write ./types/sb-types.d.ts",
     "sb:types": "run-s sb:pull-components sb:generate-types sb:eslint-types sb:prettier-types"
   },

@@ -20,15 +20,17 @@ export function Feature({ blok }: FeatureProps) {
         <h3 className="mx-auto my-4 text-3xl leading-none tracking-tighter text-slate-700">
           {blok.name}
         </h3>
-        <div className="mt-4">
-          <a
-            href="#"
-            className="mt-4 inline-flex items-center text-slate-500 hover:underline lg:mb-0"
-            title="read more"
-          >
-            Read More &raquo;
-          </a>
-        </div>
+        {blok.link && blok.link_label && (
+          <div className="mt-4">
+            <a
+              href={`/${blok.link.cached_url}`}
+              className="mt-4 inline-flex items-center text-slate-500 hover:underline lg:mb-0"
+              title={blok.link_label}
+            >
+              {blok.link_label} &raquo;
+            </a>
+          </div>
+        )}
       </div>
     </div>
   )
