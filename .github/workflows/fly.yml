@@ -12,6 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/create-env
+        with:
+          STORYBLOK_TOKEN: ${{ vars.STORYBLOK_TOKEN }}
+          STORYBLOK_WEBHOOK_SECRET: ${{ vars.STORYBLOK_WEBHOOK_SECRET }}
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only
         env:
