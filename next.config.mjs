@@ -9,8 +9,7 @@ const nextConfig = {
     ],
   },
   output: 'standalone',
-  reactStrictMode: true,
-  swcMinify: true,
+  reactStrictMode: true
 }
 
 export default nextConfig;
