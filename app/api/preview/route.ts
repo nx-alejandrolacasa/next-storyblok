@@ -15,19 +15,20 @@ export async function GET(request: NextRequest) {
     })
   }
 
-  // Enable Preview Mode by setting the cookies
-  draftMode().enable()
+  // Exit the current user from "Preview Mode". This function accepts no args.
+  const draft = await draftMode()
 
-  // Allow Storyblok's iframe to access the cookies
-  cookies()
-    .getAll()
-    .forEach((cookie) => {
-      cookies().set(cookie.name, cookie.value, {
-        sameSite: 'none',
-        secure: true,
-      })
+  draft.disable()
+
+  const cookieStore = await cookies()
+
+  for (const cookie of cookieStore.getAll()) {
+    cookieStore.set(cookie.name, cookie.value, {
+      sameSite: 'none',
+      secure: true,
+      partitioned: true,
     })
-
+  }
   // get the storyblok params for the bridge to work
   const params = request.url?.split('?')
 

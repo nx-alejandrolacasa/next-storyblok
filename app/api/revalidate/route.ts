@@ -5,7 +5,8 @@ import { NextRequest } from 'next/server'
 
 export async function POST(request: NextRequest) {
   const body = await request.json()
-  const signature = headers().get('webhook-signature')
+  const headersList = await headers()
+  const signature = headersList.get('webhook-signature')
 
   try {
     if (signature) {

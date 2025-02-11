@@ -1,5 +1,5 @@
-import { ISbCustomFetch } from '@/types/types'
-import { ISbAlternateObject, ISbStoriesParams } from '@storyblok/react'
+import type { ISbCustomFetch } from '@/types/types'
+import type { ISbAlternateObject, ISbStoriesParams } from '@storyblok/react'
 import { getStoryblokApi } from '@storyblok/react/rsc'
 import { draftMode } from 'next/headers'
 
@@ -25,10 +25,10 @@ export async function fetchStoriesBySlug({
   fetchOptions?: ISbCustomFetch
   params?: ISbStoriesParams
 }) {
-  const { isEnabled } = draftMode()
+  const draft = await draftMode()
 
   const sbParams: ISbStoriesParams = {
-    version: isEnabled ? 'draft' : 'published',
+    version: draft.isEnabled ? 'draft' : 'published',
     cv: Date.now(),
     ...params,
   }

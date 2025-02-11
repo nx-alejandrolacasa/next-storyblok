@@ -11,7 +11,10 @@ export async function generateStaticParams() {
   return getParamsFromLinks(data.links)
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const { data } = await fetchStoriesBySlug({ slug: params.slug })
+export default async function Page({
+  params,
+}: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const { data } = await fetchStoriesBySlug({ slug: slug })
   return <StoryblokStory story={data.story} bridgeOptions={{}} />
 }

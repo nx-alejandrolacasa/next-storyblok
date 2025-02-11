@@ -1,23 +1,24 @@
-import { draftMode } from 'next/headers'
+import { cookies, draftMode } from 'next/headers'
 import { redirect } from 'next/navigation'
-import { NextRequest } from 'next/server'
+import type { NextRequest } from 'next/server'
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams
   const slug = searchParams.get('slug')
 
-  // Exit the current user from "Preview Mode". This function accepts no args.
-  draftMode().disable()
+  const draft = await draftMode()
 
-  // set the cookies to None
-  // const cookies = res.getHeader('Set-Cookie') as string[]
-  //
-  // res.setHeader(
-  //   'Set-Cookie',
-  //   cookies.map((cookie) =>
-  //     cookie.replace('SameSite=Lax', 'SameSite=None;Secure')
-  //   )
-  // )
+  draft.disable()
+
+  const cookieStore = await cookies()
+
+  for (const cookie of cookieStore.getAll()) {
+    cookieStore.set(cookie.name, cookie.value, {
+      sameSite: 'none',
+      secure: true,
+      partitioned: true,
+    })
+  }
 
   // Redirect the user back to the index page
   redirect(`/${slug}`)
