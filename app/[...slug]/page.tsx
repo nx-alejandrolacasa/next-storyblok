@@ -1,5 +1,5 @@
-import { getStoryblokApi, StoryblokStory } from '@storyblok/react/rsc'
 import { fetchStoriesBySlug, getParamsFromLinks } from '@/utils/storyblok'
+import { StoryblokStory, getStoryblokApi } from '@storyblok/react/rsc'
 
 export async function generateStaticParams() {
   const storyblokApi = getStoryblokApi()

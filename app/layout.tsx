@@ -1,10 +1,10 @@
+import StoryblokProvider from '@/components/StoryblokProvider/StoryblokProvider'
+import { apiPlugin, storyblokInit } from '@storyblok/react/rsc'
 import { Metadata } from 'next'
-import { ReactNode } from 'react'
-import { Inter } from 'next/font/google'
 import { Link } from 'next-view-transitions'
 import { ViewTransitions } from 'next-view-transitions'
-import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
-import StoryblokProvider from '@/components/StoryblokProvider/StoryblokProvider'
+import { Inter } from 'next/font/google'
+import { ReactNode } from 'react'
 import '@/app/globals.css'
 
 const font = Inter({

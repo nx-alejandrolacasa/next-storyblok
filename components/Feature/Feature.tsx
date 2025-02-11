@@ -1,5 +1,5 @@
-import { storyblokEditable } from '@storyblok/react'
 import { FeatureStoryblok } from '@/types/sb-types'
+import { storyblokEditable } from '@storyblok/react'
 import Image from 'next/image'
 
 type FeatureProps = { blok: FeatureStoryblok }

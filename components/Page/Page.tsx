@@ -1,5 +1,5 @@
-import { StoryblokComponent, storyblokEditable } from '@storyblok/react'
 import { PageStoryblok } from '@/types/sb-types'
+import { StoryblokComponent, storyblokEditable } from '@storyblok/react'
 
 type PageProps = { blok: PageStoryblok }
 

@@ -1,7 +1,7 @@
-import { storyblokEditable } from '@storyblok/react'
-import { TeaserStoryblok } from '@/types/sb-types'
-import { RichText } from '@/components/RichText/RichText'
 import { Button } from '@/components/Button/Button'
+import { RichText } from '@/components/RichText/RichText'
+import { TeaserStoryblok } from '@/types/sb-types'
+import { storyblokEditable } from '@storyblok/react'
 
 type TeaserProps = { blok: TeaserStoryblok }
 
