@@ -1,5 +1,8 @@
-import { PageStoryblok } from '@/types/sb-types'
-import { StoryblokComponent, storyblokEditable } from '@storyblok/react'
+import type { PageStoryblok } from '@/types/sb-types'
+import {
+  StoryblokServerComponent,
+  storyblokEditable,
+} from '@storyblok/react/rsc'
 
 type PageProps = { blok: PageStoryblok }
 
@@ -10,7 +13,7 @@ export function Page({ blok }: PageProps) {
       {...storyblokEditable(blok)}
     >
       {blok.body?.map((nestedBlok) => (
-        <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+        <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
       ))}
     </div>
   )

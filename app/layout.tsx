@@ -1,10 +1,9 @@
 import StoryblokProvider from '@/components/StoryblokProvider/StoryblokProvider'
-import { apiPlugin, storyblokInit } from '@storyblok/react/rsc'
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 import { Link } from 'next-view-transitions'
 import { ViewTransitions } from 'next-view-transitions'
 import { Inter } from 'next/font/google'
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import '@/app/globals.css'
 
 const font = Inter({
@@ -12,14 +11,9 @@ const font = Inter({
   weight: '400',
 })
 
-storyblokInit({
-  accessToken: process.env.STORYBLOK_TOKEN,
-  use: [apiPlugin],
-})
-
 export const metadata: Metadata = {
-  title: '▲ Next.js 14 + Storyblok',
-  description: 'Next.js 14 application using Storyblok as CMS',
+  title: '▲ Next.js 15 + Storyblok',
+  description: 'Next.js 15 application using Storyblok as CMS',
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -60,7 +54,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </header>
             <main className="flex-1 py-8">{children}</main>
             <footer className="flex h-10 justify-center bg-gradient-to-t from-slate-300 px-8">
-              <p className="text-sm text-slate-500">
+              <p className="text-slate-500 text-sm">
                 Copyright &copy; {new Date().getFullYear()} &bull; Alejandro G.
                 Lacasa
               </p>

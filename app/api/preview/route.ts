@@ -1,6 +1,6 @@
 import { cookies, draftMode } from 'next/headers'
 import { redirect } from 'next/navigation'
-import { NextRequest } from 'next/server'
+import type { NextRequest } from 'next/server'
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams
@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
 
   // Check the secret and next parameters
   // This secret should only be known to this API route and the CMS
-  if (secret !== process.env.STORYBLOK_TOKEN) {
+  if (secret !== process.env.PUBLIC_NEXT_STORYBLOK_TOKEN) {
     return new Response('Invalid token', {
       status: 401,
     })

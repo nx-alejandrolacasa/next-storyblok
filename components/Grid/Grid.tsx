@@ -1,9 +1,9 @@
-import { GridStoryblok } from '@/types/sb-types'
+import type { GridStoryblok } from '@/types/sb-types'
 import {
-  SbBlokData,
-  StoryblokComponent,
+  type SbBlokData,
+  StoryblokServerComponent,
   storyblokEditable,
-} from '@storyblok/react'
+} from '@storyblok/react/rsc'
 
 type GridProps = { blok: GridStoryblok }
 
@@ -14,7 +14,7 @@ export const Grid = ({ blok }: GridProps) => {
       {...storyblokEditable(blok)}
     >
       {blok.columns?.map((nestedBlok: SbBlokData) => (
-        <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+        <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
       ))}
     </div>
   )

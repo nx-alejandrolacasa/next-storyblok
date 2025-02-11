@@ -1,6 +1,6 @@
+import { getStoryblokApi } from '@/lib/storyblok'
 import type { ISbCustomFetch } from '@/types/types'
 import type { ISbAlternateObject, ISbStoriesParams } from '@storyblok/react'
-import { getStoryblokApi } from '@storyblok/react/rsc'
 import { draftMode } from 'next/headers'
 
 export function getParamsFromLinks(links: Record<string, ISbAlternateObject>) {
