@@ -9,7 +9,7 @@ import Image from 'next/image'
 
 const font = Inter({
   subsets: ['latin'],
-  weight: '400',
+  weight: ['400', '700'],
 })
 
 export const metadata: Metadata = {
@@ -34,20 +34,29 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   height={200}
                 />
               </a>
-              <nav className="container mx-auto flex h-full items-center justify-end gap-4">
-                <Link className="text-black hover:underline" href="/about-us">
+              <nav className="container mx-auto flex h-full items-center justify-end gap-8 text-lg">
+                <Link
+                  className="transition-all hover:text-amber-500 hover:underline"
+                  href="/about-us"
+                >
                   Who we are
                 </Link>
-                <Link className="text-black hover:underline" href="/services">
+                <Link
+                  className="transition-all hover:text-amber-500 hover:underline"
+                  href="/services"
+                >
                   What we offer
                 </Link>
                 <Link
-                  className="text-black hover:underline"
+                  className="transition-all hover:text-amber-500 hover:underline"
                   href="/career/work-with-us"
                 >
                   How we work
                 </Link>
-                <Link className="text-black hover:underline" href="/contact">
+                <Link
+                  className="transition-all hover:text-amber-500 hover:underline"
+                  href="/contact"
+                >
                   Contact us
                 </Link>
               </nav>
