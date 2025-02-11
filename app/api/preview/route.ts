@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
 
   // Check the secret and next parameters
   // This secret should only be known to this API route and the CMS
-  if (secret !== process.env.PUBLIC_NEXT_STORYBLOK_TOKEN) {
+  if (secret !== process.env.NEXT_PUBLIC_STORYBLOK_TOKEN) {
     return new Response('Invalid token', {
       status: 401,
     })
@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
   // Exit the current user from "Preview Mode". This function accepts no args.
   const draft = await draftMode()
 
-  draft.disable()
+  draft.enable()
 
   const cookieStore = await cookies()
 

@@ -22,7 +22,7 @@ const components: SbReactComponentsMap = {
 }
 
 export const getStoryblokApi = storyblokInit({
-  accessToken: process.env.PUBLIC_NEXT_STORYBLOK_TOKEN,
+  accessToken: process.env.NEXT_PUBLIC_STORYBLOK_TOKEN,
   use: [apiPlugin],
   components,
 })

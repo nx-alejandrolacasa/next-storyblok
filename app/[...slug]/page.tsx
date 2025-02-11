@@ -15,6 +15,6 @@ export default async function Page({
   params,
 }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const { data } = await fetchStoriesBySlug({ slug: slug })
-  return <StoryblokStory story={data.story} bridgeOptions={{}} />
+  const { data } = await fetchStoriesBySlug({ slug })
+  return <StoryblokStory story={data.story} />
 }

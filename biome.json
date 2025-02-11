@@ -24,8 +24,16 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": false,
-      "correctness": { "noUnusedImports": "error" }
+      "recommended": true,
+      "correctness": {
+        "noUnusedImports": "error"
+      },
+      "nursery": {
+        "useSortedClasses": "error"
+      },
+      "performance": {
+        "noAccumulatingSpread": "warn"
+      }
     }
   },
   "javascript": {

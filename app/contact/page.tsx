@@ -1,9 +1,9 @@
-import { LoginForm } from '@/components/LoginForm/LoginForm'
+import { ContactForm } from '@/components/ContactForm/ContactForm'
 
 export default async function Form() {
   return (
     <div className="container mx-auto flex justify-center">
-      <LoginForm />
+      <ContactForm />
     </div>
   )
 }
