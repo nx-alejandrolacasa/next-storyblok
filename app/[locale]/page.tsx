@@ -31,7 +31,5 @@ export default async function Page({
     params: { language: locale },
   })
 
-  console.log(data.story)
-
   return <StoryblokStory story={data.story} />
 }
