@@ -1,6 +1,6 @@
 'use server'
 
-import { contactFormSchema } from '@/app/contact/schema'
+import { contactFormSchema } from '@/app/[locale]/contact/schema'
 import { parseWithZod } from '@conform-to/zod'
 import { redirect } from 'next/navigation'
 

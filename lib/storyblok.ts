@@ -2,6 +2,7 @@ import { Button } from '@/components/Button/Button'
 import { Config } from '@/components/Config/Config'
 import { Feature } from '@/components/Feature/Feature'
 import { Grid } from '@/components/Grid/Grid'
+import { Hero } from '@/components/Hero/Hero'
 import { MenuLink } from '@/components/MenuLink/MenuLink'
 import { Page } from '@/components/Page/Page'
 import { Teaser } from '@/components/Teaser/Teaser'
@@ -16,6 +17,7 @@ const components: SbReactComponentsMap = {
   config: Config,
   feature: Feature,
   grid: Grid,
+  hero: Hero,
   menu_link: MenuLink,
   page: Page,
   teaser: Teaser,

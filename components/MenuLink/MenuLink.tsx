@@ -1,7 +1,7 @@
-import { MenuLinkStoryblok } from '@/types/sb-types'
+import type { MenuLinkStoryblok } from '@/types/sb-types'
 import { storyblokEditable } from '@storyblok/react'
 import clsx from 'clsx'
-import { Link } from 'next-view-transitions'
+import Link from 'next/link'
 
 type MenuLinkProps = {
   blok: MenuLinkStoryblok

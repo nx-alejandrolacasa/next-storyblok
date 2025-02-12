@@ -3,7 +3,7 @@
 import type { ButtonStoryblok } from '@/types/sb-types'
 import { storyblokEditable } from '@storyblok/react'
 import { cva } from 'class-variance-authority'
-import { Link } from 'next-view-transitions'
+import Link from 'next/link'
 import type { AnchorHTMLAttributes } from 'react'
 
 type ButtonProps = {

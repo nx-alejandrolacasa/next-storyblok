@@ -29,9 +29,14 @@ export async function GET(request: NextRequest) {
       partitioned: true,
     })
   }
+
   // get the storyblok params for the bridge to work
   const params = request.url?.split('?')
 
   // Redirect to the path from entry
-  redirect(params ? `/${slug}?${params[1]}` : `/${slug}`)
+  redirect(
+    params
+      ? `/${slug !== 'home' ? slug : ''}?${params[1]}`
+      : `/${slug !== 'home' ? slug : ''}`
+  )
 }

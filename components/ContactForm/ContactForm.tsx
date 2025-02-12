@@ -1,7 +1,7 @@
 'use client'
 
+import { contactFormSchema } from '@/app/[locale]/contact/schema'
 import { contact } from '@/app/_actions/contact'
-import { contactFormSchema } from '@/app/contact/schema'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'

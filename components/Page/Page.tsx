@@ -8,10 +8,7 @@ type PageProps = { blok: PageStoryblok }
 
 export function Page({ blok }: PageProps) {
   return (
-    <div
-      className="mx-auto max-w-7xl flex-1 px-4 sm:px-6"
-      {...storyblokEditable(blok)}
-    >
+    <div {...storyblokEditable(blok)}>
       {blok.body?.map((nestedBlok) => (
         <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
       ))}
