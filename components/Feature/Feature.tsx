@@ -1,5 +1,5 @@
+import type { FeatureStoryblok } from '@/types/sb-types'
 import { storyblokEditable } from '@storyblok/react'
-import { FeatureStoryblok } from '@/types/sb-types'
 import Image from 'next/image'
 
 type FeatureProps = { blok: FeatureStoryblok }
@@ -8,16 +8,16 @@ export function Feature({ blok }: FeatureProps) {
   return (
     <div {...storyblokEditable(blok)}>
       <div className="p-6">
-        <div className="h-36 lg:h-48">
+        <div className="w-full">
           <Image
             alt="feature image"
-            className="mb-8 h-full w-auto rounded object-center"
+            className="mb-8 h-full w-auto rounded-sm object-center"
+            src={`${blok.image.filename}/m/800x533`}
             height={533}
-            src={`${blok.image.filename}/m/`}
             width={800}
           />
         </div>
-        <h3 className="mx-auto my-4 text-3xl leading-none tracking-tighter text-slate-700">
+        <h3 className="mx-auto my-4 text-3xl text-slate-700 leading-none tracking-tighter">
           {blok.name}
         </h3>
         {blok.link && blok.link_label && (

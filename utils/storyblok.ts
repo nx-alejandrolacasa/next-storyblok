@@ -1,7 +1,7 @@
+import { getStoryblokApi } from '@/lib/storyblok'
+import type { ISbCustomFetch } from '@/types/types'
+import type { ISbAlternateObject, ISbStoriesParams } from '@storyblok/react'
 import { draftMode } from 'next/headers'
-import { ISbCustomFetch } from '@/types/types'
-import { getStoryblokApi } from '@storyblok/react/rsc'
-import { ISbAlternateObject, ISbStoriesParams } from '@storyblok/react'
 
 export function getParamsFromLinks(links: Record<string, ISbAlternateObject>) {
   return Object.keys(links)
@@ -25,17 +25,17 @@ export async function fetchStoriesBySlug({
   fetchOptions?: ISbCustomFetch
   params?: ISbStoriesParams
 }) {
-  const { isEnabled } = draftMode()
+  const draft = await draftMode()
 
   const sbParams: ISbStoriesParams = {
-    version: isEnabled ? 'draft' : 'published',
+    version: draft.isEnabled ? 'draft' : 'published',
     cv: Date.now(),
     ...params,
   }
 
   const storyblokApi = getStoryblokApi()
   return storyblokApi.get(
-    `cdn/stories/${Array.isArray(slug) ? slug.join('/') : slug ?? 'home'}`,
+    `cdn/stories/${Array.isArray(slug) ? slug.join('/') : (slug ?? 'home')}`,
     sbParams,
     fetchOptions
   )

@@ -1,12 +1,12 @@
 'use server'
 
+import { contactFormSchema } from '@/app/[locale]/contact/schema'
 import { parseWithZod } from '@conform-to/zod'
-import { loginSchema } from '@/app/login/schema'
 import { redirect } from 'next/navigation'
 
-export async function login(prevState: unknown, formData: FormData) {
+export async function contact(prevState: unknown, formData: FormData) {
   const submission = parseWithZod(formData, {
-    schema: loginSchema,
+    schema: contactFormSchema,
   })
 
   if (submission.status !== 'success') {

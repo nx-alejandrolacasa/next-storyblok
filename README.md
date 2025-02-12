@@ -11,8 +11,8 @@ npm run dev
 ```
 
 ## ⚙️ Environment variables
-| Variable                 | Description             | Example                                           |
-|--------------------------|-------------------------|---------------------------------------------------|
-| STORYBLOK_TOKEN          | Storyblok Token         | S6SYUIrzCvROuST523c96wrr                          |
-| STORYBLOK_WEBHOOK_SECRET | Storyblok Webhook token | 8dd330af71be389c096915d92b4d082ebcabbd27          |
+| Variable                    | Description             | Example                                           |
+|-----------------------------|-------------------------|---------------------------------------------------|
+| NEXT_PUBLIC_STORYBLOK_TOKEN | Storyblok Token         | S6SYUIrzCvROuST523c96wrr                          |
+| STORYBLOK_WEBHOOK_SECRET    | Storyblok Webhook token | 8dd330af71be389c096915d92b4d082ebcabbd27          |
 

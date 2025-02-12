@@ -1,3 +1,7 @@
+import createNextIntlPlugin from 'next-intl/plugin'
+
+const withNextIntl = createNextIntlPlugin('./i18n/requests.ts')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -8,8 +12,17 @@ const nextConfig = {
       },
     ],
   },
+  // redirects: async () => {
+  //   return [
+  //     {
+  //       source: '/home',
+  //       destination: '/',
+  //       permanent: true,
+  //     },
+  //   ]
+  // },
   output: 'standalone',
-  reactStrictMode: true
+  reactStrictMode: true,
 }
 
-export default nextConfig;
+export default withNextIntl(nextConfig)

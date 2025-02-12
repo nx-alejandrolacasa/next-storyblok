@@ -1,34 +1,20 @@
 'use client'
-import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
-import { ReactNode } from 'react'
-import { Button } from '@/components/Button/Button'
-import { Config } from '@/components/Config/Config'
-import { Feature } from '@/components/Feature/Feature'
-import { Grid } from '@/components/Grid/Grid'
-import { MenuLink } from '@/components/MenuLink/MenuLink'
-import { Page } from '@/components/Page/Page'
-import { Teaser } from '@/components/Teaser/Teaser'
 
-const components = {
-  button: Button,
-  config: Config,
-  feature: Feature,
-  grid: Grid,
-  menu_link: MenuLink,
-  page: Page,
-  teaser: Teaser,
-}
-
-storyblokInit({
-  accessToken: process.env.STORYBLOK_TOKEN,
-  use: [apiPlugin],
-  components,
-})
+import { getStoryblokApi } from '@/lib/storyblok'
+import { type ReactNode, useEffect } from 'react'
 
 export default function StoryblokProvider({
   children,
 }: {
   children: ReactNode
 }) {
+  getStoryblokApi()
+
+  useEffect(() => {
+    if (window.self !== window.top) {
+      document.body.classList.add('is-storyblok-editor')
+    }
+  }, [])
+
   return children
 }
