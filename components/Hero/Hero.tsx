@@ -1,6 +1,7 @@
 import { Button } from '@/components/Button/Button'
 import { RichText } from '@/components/RichText/RichText'
 import type { HeroStoryblok } from '@/types/sb-types'
+import { storyblokEditable } from '@storyblok/react/rsc'
 import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 
@@ -12,7 +13,10 @@ export async function Hero({ blok }: HeroProps) {
   const t = await getTranslations()
 
   return (
-    <section className="relative isolate mb-10 overflow-hidden">
+    <section
+      className="relative isolate mb-10 overflow-hidden"
+      {...storyblokEditable(blok)}
+    >
       <Image
         fill
         sizes="100vw"
