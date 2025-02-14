@@ -34,7 +34,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body
-        className={`${font.className} flex min-h-screen flex-col justify-between`}
+        className={`${font.className} relative flex min-h-screen flex-col justify-between`}
       >
         <StoryblokProvider>
           <NextIntlClientProvider messages={messages}>

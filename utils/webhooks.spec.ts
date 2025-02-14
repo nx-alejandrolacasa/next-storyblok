@@ -7,7 +7,7 @@ describe('verifySignature', () => {
   })
 
   it('throws an error if STORYBLOK_WEBHOOK_SECRET is not defined', () => {
-    delete process.env.STORYBLOK_WEBHOOK_SECRET
+    process.env.STORYBLOK_WEBHOOK_SECRET = undefined
     const body = { foo: 'bar' }
     const signature = 'abc123'
     expect(() => verifySignature(body, signature)).toThrow(

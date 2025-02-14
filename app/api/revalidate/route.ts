@@ -1,7 +1,7 @@
 import { verifySignature } from '@/utils/webhooks'
 import { revalidatePath } from 'next/cache'
 import { headers } from 'next/headers'
-import { NextRequest } from 'next/server'
+import type { NextRequest } from 'next/server'
 
 export async function POST(request: NextRequest) {
   const body = await request.json()

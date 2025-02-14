@@ -33,10 +33,18 @@ export async function fetchStoriesBySlug({
     ...params,
   }
 
-  const storyblokApi = getStoryblokApi()
-  return storyblokApi.get(
-    `cdn/stories/${Array.isArray(slug) ? slug.join('/') : (slug ?? 'home')}`,
-    sbParams,
-    fetchOptions
-  )
+  try {
+    const storyblokApi = getStoryblokApi()
+
+    const { data } = await storyblokApi.get(
+      `cdn/stories/${Array.isArray(slug) ? slug.join('/') : (slug ?? 'home')}`,
+      sbParams,
+      fetchOptions
+    )
+
+    return data
+  } catch (error) {
+    console.error(error)
+    return { data: null }
+  }
 }

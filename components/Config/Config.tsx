@@ -1,4 +1,4 @@
-import { ConfigStoryblok } from '@/types/sb-types'
+import type { ConfigStoryblok } from '@/types/sb-types'
 
 type ConfigProps = {
   blok: ConfigStoryblok
