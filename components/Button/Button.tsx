@@ -16,11 +16,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'text-white bg-amber-500 hover:bg-amber-500/90',
+        primary: 'text-white bg-sky-500 hover:bg-sky-500/90',
         secondary:
-          'text-amber-500 border border-amber-500 hover:text-amber-500/90 hover:border-amber-500/90',
+          'text-sky-500 border border-sky-500 hover:text-sky-500/90 hover:border-sky-500/90',
         tertiary:
-          'text-amber-500 bg-rose-50 hover:bg-rose-50/90 hover:text-amber-500/90',
+          'text-sky-500 bg-rose-50 hover:bg-rose-50/90 hover:text-sky-500/90',
       },
     },
     defaultVariants: {

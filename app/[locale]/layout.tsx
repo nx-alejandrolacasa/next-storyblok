@@ -41,7 +41,7 @@ export default async function RootLayout({
             <Header />
             <main className="flex-1">{children}</main>
             <footer className="flex h-20 items-center justify-center bg-rose-50">
-              <p className="text-amber-600 text-sm">
+              <p className="text-sky-600 text-sm">
                 Copyright &copy; {new Date().getFullYear()} &bull; nexum
               </p>
             </footer>

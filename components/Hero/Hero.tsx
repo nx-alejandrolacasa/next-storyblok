@@ -48,7 +48,7 @@ export async function Hero({ blok }: HeroProps) {
             </h1>
             {blok.subtitle && (
               <RichText
-                className="mt-8 text-pretty font-medium text-amber-100 text-lg sm:text-xl/8"
+                className="mt-8 text-pretty font-medium text-sky-100 text-lg sm:text-xl/8"
                 text={blok.subtitle}
               />
             )}
