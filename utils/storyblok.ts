@@ -29,7 +29,6 @@ export async function fetchStoriesBySlug({
 
   const sbParams: ISbStoriesParams = {
     version: draft.isEnabled ? 'draft' : 'published',
-    cv: Date.now(),
     ...params,
   }
 
