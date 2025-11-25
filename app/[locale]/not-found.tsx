@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <main className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
       <div className="text-center">
-        <p className="font-semibold text-sky-500 text-base">404</p>
+        <p className="font-semibold text-base text-sky-500">404</p>
         <h1 className="mt-4 text-balance font-semibold text-5xl text-gray-900 tracking-tight sm:text-7xl">
           Page not found
         </h1>

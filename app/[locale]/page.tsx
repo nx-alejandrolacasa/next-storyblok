@@ -1,7 +1,7 @@
-import { fetchStoriesBySlug } from '@/utils/storyblok'
 import { StoryblokStory } from '@storyblok/react/rsc'
-import { setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
+import { setRequestLocale } from 'next-intl/server'
+import { fetchStoriesBySlug } from '@/utils/storyblok'
 
 export async function generateMetadata({
   params,
@@ -23,7 +23,9 @@ export async function generateMetadata({
 
 export default async function Page({
   params,
-}: { params: Promise<{ locale: string; slug: string }> }) {
+}: {
+  params: Promise<{ locale: string; slug: string }>
+}) {
   const { slug, locale } = await params
 
   setRequestLocale(locale)

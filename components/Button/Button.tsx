@@ -1,26 +1,26 @@
 'use client'
 
-import type { ButtonStoryblok } from '@/types/sb-types'
 import { storyblokEditable } from '@storyblok/react'
 import { cva } from 'class-variance-authority'
 import Link from 'next/link'
 import type { AnchorHTMLAttributes } from 'react'
+import type { SbButton } from '@/types/sb-types'
 
 type ButtonProps = {
-  blok: ButtonStoryblok
+  blok: SbButton
   className?: string
 }
 
 const buttonVariants = cva(
-  'rounded-md px-5 py-3 text-center text-base font-semibold transition-all',
+  'rounded-md px-5 py-3 text-center font-semibold text-base transition-all',
   {
     variants: {
       variant: {
-        primary: 'text-white bg-sky-500 hover:bg-sky-500/90',
+        primary: 'bg-sky-500 text-white hover:bg-sky-500/90',
         secondary:
-          'text-sky-500 border border-sky-500 hover:text-sky-500/90 hover:border-sky-500/90',
+          'border border-sky-500 text-sky-500 hover:border-sky-500/90 hover:text-sky-500/90',
         tertiary:
-          'text-sky-500 bg-rose-50 hover:bg-rose-50/90 hover:text-sky-500/90',
+          'bg-rose-50 text-sky-500 hover:bg-rose-50/90 hover:text-sky-500/90',
       },
     },
     defaultVariants: {

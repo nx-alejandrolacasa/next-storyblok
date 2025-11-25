@@ -1,11 +1,11 @@
-import type { GridStoryblok } from '@/types/sb-types'
 import {
   type SbBlokData,
   StoryblokServerComponent,
   storyblokEditable,
 } from '@storyblok/react/rsc'
+import type { SbGrid } from '@/types/sb-types'
 
-type GridProps = { blok: GridStoryblok }
+type GridProps = { blok: SbGrid }
 
 export const Grid = ({ blok }: GridProps) => {
   return (

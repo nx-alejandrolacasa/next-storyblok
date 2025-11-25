@@ -16,7 +16,7 @@ describe('getParamsFromLinks', () => {
     }
     const expected = [{ slug: ['pages', 'foo'] }, { slug: ['pages', 'bar'] }]
 
-    // @ts-ignore
+    // @ts-expect-error
     expect(getParamsFromLinks(links)).toEqual(expected)
   })
 })

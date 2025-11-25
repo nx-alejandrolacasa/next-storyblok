@@ -1,15 +1,16 @@
-import type { MenuLinkStoryblok } from '@/types/sb-types'
 import { storyblokEditable } from '@storyblok/react'
 import clsx from 'clsx'
 import Link from 'next/link'
+import type { SbMenuLink } from '@/types/sb-types'
+import { getHrefFromLink } from '@/utils/links'
 
 type MenuLinkProps = {
-  blok: MenuLinkStoryblok
+  blok: SbMenuLink
   className?: string
 }
 
 export function MenuLink({ blok, className }: MenuLinkProps) {
-  const href = blok.link?.story?.url ?? blok.link?.url
+  const href = getHrefFromLink(blok.link)
 
   return (
     <Link

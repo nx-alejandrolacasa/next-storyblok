@@ -1,10 +1,10 @@
 'use server'
 
-import { contactFormSchema } from '@/app/[locale]/contact/schema'
 import { parseWithZod } from '@conform-to/zod'
 import { redirect } from 'next/navigation'
+import { contactFormSchema } from '@/app/[locale]/contact/schema'
 
-export async function contact(prevState: unknown, formData: FormData) {
+export async function contact(_prevState: unknown, formData: FormData) {
   const submission = parseWithZod(formData, {
     schema: contactFormSchema,
   })

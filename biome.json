@@ -1,11 +1,11 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.5/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.7/schema.json",
   "files": {
     "includes": [
       "**",
       "!**/node_modules",
       "!**/.next",
-      "!**/.storyblok/**",
+      "!**/.storyblok",
       "!**/components.*.json",
       "!**/globals.css"
     ],
@@ -21,6 +21,11 @@
       "source": {
         "organizeImports": "on"
       }
+    }
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
     }
   },
   "formatter": {
@@ -55,14 +60,16 @@
   "linter": {
     "enabled": true,
     "rules": {
+      "recommended": true,
       "correctness": {
         "noUnusedImports": {
           "level": "error",
-          "fix": "safe"
-        }
+          "fix": "safe",
+          "options": {}
+        },
+        "useUniqueElementIds": "off"
       },
       "nursery": {
-        "useUniqueElementIds": "off",
         "useSortedClasses": {
           "fix": "safe",
           "level": "warn",
@@ -75,7 +82,14 @@
       "performance": {
         "noAccumulatingSpread": "warn"
       },
-      "recommended": true,
+      "suspicious": {
+        "noUnknownAtRules": {
+          "level": "warn",
+          "options": {
+            "ignore": ["plugin", "theme", "utility", "apply"]
+          }
+        }
+      },
       "style": {
         "noParameterAssign": "error",
         "useAsConstAssertion": "error",
@@ -89,5 +103,19 @@
         "noUselessElse": "error"
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": [".storyblok/*.d.{ts,tsx}"],
+      "linter": {
+        "enabled": true,
+        "rules": {
+          "recommended": true,
+          "suspicious": {
+            "noExplicitAny": "off"
+          }
+        }
+      }
+    }
+  ]
 }

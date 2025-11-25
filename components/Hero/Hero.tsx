@@ -1,12 +1,12 @@
+import { storyblokEditable } from '@storyblok/react/rsc'
+import Image from 'next/image'
+import { getTranslations } from 'next-intl/server'
 import { Button } from '@/components/Button/Button'
 import { RichText } from '@/components/RichText/RichText'
-import type { HeroStoryblok } from '@/types/sb-types'
-import { storyblokEditable } from '@storyblok/react/rsc'
-import { getTranslations } from 'next-intl/server'
-import Image from 'next/image'
+import type { SbHero } from '@/types/sb-types'
 
 type HeroProps = {
-  blok: HeroStoryblok
+  blok: SbHero
 }
 
 export async function Hero({ blok }: HeroProps) {
@@ -48,7 +48,7 @@ export async function Hero({ blok }: HeroProps) {
             </h1>
             {blok.subtitle && (
               <RichText
-                className="mt-8 text-pretty font-medium text-sky-100 text-lg sm:text-xl/8"
+                className="mt-8 text-pretty font-medium text-lg text-sky-100 sm:text-xl/8"
                 text={blok.subtitle}
               />
             )}

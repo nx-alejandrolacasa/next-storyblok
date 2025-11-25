@@ -1,10 +1,10 @@
-import type { PageStoryblok } from '@/types/sb-types'
 import {
   StoryblokServerComponent,
   storyblokEditable,
 } from '@storyblok/react/rsc'
+import type { SbPage } from '@/types/sb-types'
 
-type PageProps = { blok: PageStoryblok }
+type PageProps = { blok: SbPage }
 
 export function Page({ blok }: PageProps) {
   return (

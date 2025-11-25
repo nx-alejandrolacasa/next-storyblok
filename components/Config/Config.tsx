@@ -1,7 +1,7 @@
-import type { ConfigStoryblok } from '@/types/sb-types'
+import type { SbConfig } from '@/types/sb-types'
 
 type ConfigProps = {
-  blok: ConfigStoryblok
+  blok: SbConfig
 }
 
 export function Config({ blok }: ConfigProps) {

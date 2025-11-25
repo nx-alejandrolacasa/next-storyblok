@@ -1,6 +1,6 @@
-import { Link, routing } from '@/i18n/routing'
-import { getLocale, getTranslations } from 'next-intl/server'
 import Image from 'next/image'
+import { getLocale, getTranslations } from 'next-intl/server'
+import { Link, routing } from '@/i18n/routing'
 
 export async function Header() {
   const locale = await getLocale()

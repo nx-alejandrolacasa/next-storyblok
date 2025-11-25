@@ -1,9 +1,9 @@
+import { storyblokEditable } from '@storyblok/react'
 import { Button } from '@/components/Button/Button'
 import { RichText } from '@/components/RichText/RichText'
-import type { TeaserStoryblok } from '@/types/sb-types'
-import { storyblokEditable } from '@storyblok/react'
+import type { SbTeaser } from '@/types/sb-types'
 
-type TeaserProps = { blok: TeaserStoryblok }
+type TeaserProps = { blok: SbTeaser }
 
 export const Teaser = ({ blok }: TeaserProps) => {
   return (

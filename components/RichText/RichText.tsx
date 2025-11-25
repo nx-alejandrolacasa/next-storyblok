@@ -1,14 +1,14 @@
-import { cn } from '@/lib/utils'
-import type { RichtextStoryblok } from '@/types/sb-types'
 import {
-  type StoryblokRichTextNode,
   richTextResolver,
+  type StoryblokRichTextNode,
 } from '@storyblok/richtext'
-import DOMPurify from 'isomorphic-dompurify'
 import type { HTMLAttributes } from 'react'
+import sanitizeHtml from 'sanitize-html'
+import { cn } from '@/lib/utils'
+import type { StoryblokRichtext } from '@/types/sb-types'
 
 type RichTextProp = {
-  text: RichtextStoryblok
+  text: StoryblokRichtext
   className?: string
 } & HTMLAttributes<HTMLDivElement>
 
@@ -19,12 +19,18 @@ export function RichText({ text, className = '', ...rest }: RichTextProp) {
       className={cn(className, 'nx-rich-text')}
       // biome-ignore lint/security/noDangerouslySetInnerHtml: required for rich text
       dangerouslySetInnerHTML={{
-        __html: DOMPurify.sanitize(
+        __html: sanitizeHtml(
           richTextResolver<string>().render(
             text as StoryblokRichTextNode<string>
           ),
           {
-            ADD_ATTR: ['target'],
+            allowedAttributes: {
+              ...sanitizeHtml.defaults.allowedAttributes,
+              a: [
+                ...(sanitizeHtml.defaults.allowedAttributes.a || []),
+                'target',
+              ],
+            },
           }
         ),
       }}

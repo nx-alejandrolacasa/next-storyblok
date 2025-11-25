@@ -1,8 +1,8 @@
 'use client' // Error boundaries must be Client Components
 
+import { useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { Link } from '@/i18n/routing'
-import { useEffect } from 'react'
 
 // biome-ignore lint/suspicious/noShadowRestrictedNames: Error name required
 export default function Error({
@@ -19,7 +19,7 @@ export default function Error({
   return (
     <main className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
       <div className="text-center">
-        <p className="font-semibold text-sky-500 text-base">500</p>
+        <p className="font-semibold text-base text-sky-500">500</p>
         <h1 className="mt-4 text-balance font-semibold text-5xl text-gray-900 tracking-tight sm:text-7xl">
           There was an error
         </h1>

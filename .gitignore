@@ -42,5 +42,7 @@ next-env.d.ts
 
 # generated
 /types/components.*
+/.storyblok/logs
+/.storyblok/components
 
 certificates

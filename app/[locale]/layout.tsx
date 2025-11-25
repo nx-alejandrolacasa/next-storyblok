@@ -1,12 +1,12 @@
-import StoryblokProvider from '@/components/StoryblokProvider/StoryblokProvider'
 import { Inter } from 'next/font/google'
 import type { ReactNode } from 'react'
+import StoryblokProvider from '@/components/StoryblokProvider/StoryblokProvider'
 import '@/app/globals.css'
-import { Header } from '@/components/Header/Header'
-import { routing } from '@/i18n/routing'
+import { notFound } from 'next/navigation'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
-import { notFound } from 'next/navigation'
+import { Header } from '@/components/Header/Header'
+import { routing } from '@/i18n/routing'
 
 const font = Inter({
   subsets: ['latin'],
@@ -16,7 +16,10 @@ const font = Inter({
 export default async function RootLayout({
   children,
   params,
-}: { children: ReactNode; params: Promise<{ locale: string }> }) {
+}: {
+  children: ReactNode
+  params: Promise<{ locale: string }>
+}) {
   const { locale } = await params
 
   // Ensure that the incoming `locale` is valid

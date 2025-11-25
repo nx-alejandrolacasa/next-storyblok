@@ -1,3 +1,8 @@
+import {
+  apiPlugin,
+  type SbReactComponentsMap,
+  storyblokInit,
+} from '@storyblok/react/rsc'
 import { Button } from '@/components/Button/Button'
 import { Config } from '@/components/Config/Config'
 import { Feature } from '@/components/Feature/Feature'
@@ -6,11 +11,6 @@ import { Hero } from '@/components/Hero/Hero'
 import { MenuLink } from '@/components/MenuLink/MenuLink'
 import { Page } from '@/components/Page/Page'
 import { Teaser } from '@/components/Teaser/Teaser'
-import {
-  type SbReactComponentsMap,
-  apiPlugin,
-  storyblokInit,
-} from '@storyblok/react/rsc'
 
 const components: SbReactComponentsMap = {
   button: Button,

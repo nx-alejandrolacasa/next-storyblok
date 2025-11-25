@@ -1,7 +1,7 @@
-import { verifySignature } from '@/utils/webhooks'
 import { revalidatePath } from 'next/cache'
 import { headers } from 'next/headers'
 import type { NextRequest } from 'next/server'
+import { verifySignature } from '@/utils/webhooks'
 
 export async function POST(request: NextRequest) {
   const body = await request.json()
@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
     } else {
       return new Response('Signature missing', { status: 400 })
     }
-  } catch (err) {
+  } catch (_err) {
     return new Response('Error validating signature', { status: 500 })
   }
 
@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
   try {
     revalidatePath(full_slug === 'home' ? '/' : `/${full_slug}`)
     return new Response(JSON.stringify({ revalidated: true }), { status: 200 })
-  } catch (err) {
+  } catch (_err) {
     return new Response('Error revalidating', { status: 500 })
   }
 }

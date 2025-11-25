@@ -1,8 +1,8 @@
-import type { FeatureStoryblok } from '@/types/sb-types'
 import { storyblokEditable } from '@storyblok/react'
 import Image from 'next/image'
+import type { SbFeature } from '@/types/sb-types'
 
-type FeatureProps = { blok: FeatureStoryblok }
+type FeatureProps = { blok: SbFeature }
 
 export function Feature({ blok }: FeatureProps) {
   return (

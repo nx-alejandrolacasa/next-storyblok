@@ -1,13 +1,13 @@
 'use client'
 
-import { contactFormSchema } from '@/app/[locale]/contact/schema'
-import { contact } from '@/app/_actions/contact'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
 import { useForm } from '@conform-to/react'
 import { parseWithZod } from '@conform-to/zod'
 import { useFormState, useFormStatus } from 'react-dom'
+import { contact } from '@/app/_actions/contact'
+import { contactFormSchema } from '@/app/[locale]/contact/schema'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
 
 function SubmitButton() {
   const { pending } = useFormStatus()
