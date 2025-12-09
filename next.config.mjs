@@ -1,14 +1,14 @@
-import createNextIntlPlugin from 'next-intl/plugin'
+import createNextIntlPlugin from "next-intl/plugin";
 
-const withNextIntl = createNextIntlPlugin('./i18n/requests.ts')
+const withNextIntl = createNextIntlPlugin("./i18n/requests.ts");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'a.storyblok.com',
+        protocol: "https",
+        hostname: "a.storyblok.com",
       },
     ],
   },
@@ -21,8 +21,7 @@ const nextConfig = {
   //     },
   //   ]
   // },
-  output: 'standalone',
   reactStrictMode: true,
-}
+};
 
-export default withNextIntl(nextConfig)
+export default withNextIntl(nextConfig);
