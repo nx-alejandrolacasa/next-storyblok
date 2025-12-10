@@ -2,10 +2,7 @@ name = "next-storyblok"
 compatibility_date = "2024-11-26"
 compatibility_flags = ["nodejs_compat"]
 
-main = ".worker/index.mjs"
-
-# Automatically place the workerd and the assets on the same global network location
-assets = { directory = ".worker/assets", binding = "ASSETS" }
+main = ".open-next/worker.js"
 
 [observability]
 enabled = true
