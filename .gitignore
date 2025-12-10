@@ -11,8 +11,11 @@
 # next.js
 /.next/
 /out/
+
+# cloudflare
 /.open-next/
 /.worker/
+/.wrangler/
 
 # production
 /build
