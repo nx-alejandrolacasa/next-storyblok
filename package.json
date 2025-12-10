@@ -27,6 +27,7 @@
     "@radix-ui/react-slot": "1.2.4",
     "@storyblok/react": "5.4.20",
     "@storyblok/richtext": "3.8.2",
+    "@swc/helpers": "0.5.17",
     "class-variance-authority": "0.7.1",
     "colord": "2.9.3",
     "next": "16.0.8",
