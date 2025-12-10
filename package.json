@@ -29,7 +29,7 @@
     "@storyblok/richtext": "3.8.2",
     "class-variance-authority": "0.7.1",
     "colord": "2.9.3",
-    "next": "^16.0.8",
+    "next": "16.0.8",
     "next-intl": "4.5.8",
     "react": "19.2.1",
     "react-dom": "19.2.1",
@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.8",
-    "@opennextjs/cloudflare": "^1.14.4",
+    "@opennextjs/cloudflare": "1.14.4",
     "@tailwindcss/postcss": "4.1.17",
     "@types/node": "24.10.2",
     "@types/react": "19.2.7",
@@ -55,6 +55,6 @@
     "typescript": "5.9.3",
     "vite-tsconfig-paths": "5.1.4",
     "vitest": "4.0.15",
-    "wrangler": "^4.53.0"
+    "wrangler": "4.53.0"
   }
 }
