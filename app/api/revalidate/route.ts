@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     return new Response('Error validating signature', { status: 500 })
   }
 
-  const { full_slug } = body
+  const { full_slug } = body as { full_slug: string }
 
   try {
     revalidatePath(full_slug === 'home' ? '/' : `/${full_slug}`)

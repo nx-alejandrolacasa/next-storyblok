@@ -1,6 +1,6 @@
 import type { NextRequest } from 'next/server'
 
 export async function POST(request: NextRequest) {
-  const body = await request.json()
+  const body: BodyInit = await request.json()
   return new Response(body)
 }

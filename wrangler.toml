@@ -1,8 +1,0 @@
-name = "next-storyblok"
-compatibility_date = "2024-11-26"
-compatibility_flags = ["nodejs_compat"]
-
-main = ".open-next/worker.js"
-
-[observability]
-enabled = true

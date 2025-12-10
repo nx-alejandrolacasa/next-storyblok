@@ -1,6 +1,6 @@
 import crypto from 'node:crypto'
 
-export function verifySignature(body: object, signature: string) {
+export function verifySignature(body: unknown, signature: string) {
   const secret = process.env.STORYBLOK_WEBHOOK_SECRET
 
   if (!secret) {
