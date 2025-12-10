@@ -7,3 +7,5 @@ export const config = {
   // Match only internationalized pathnames
   matcher: ["/", "/(en|es|fr)/:path*"],
 };
+
+export const runtime = "experimental-edge";
