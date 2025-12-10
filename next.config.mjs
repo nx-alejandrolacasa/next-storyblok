@@ -21,11 +21,22 @@ const nextConfig = {
   //     },
   //   ]
   // },
+  output: 'standalone',
   reactStrictMode: true,
 }
 
 export default withNextIntl(nextConfig)
 
-import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare'
-
-initOpenNextCloudflareForDev()
+// Only initialize OpenNext Cloudflare for local development
+// This prevents conflicts when deploying to Vercel, Fly.io, or other platforms
+if (process.env.NODE_ENV === 'development') {
+  try {
+    const { initOpenNextCloudflareForDev } = await import(
+      '@opennextjs/cloudflare'
+    )
+    initOpenNextCloudflareForDev()
+  } catch (error) {
+    // Silently fail if @opennextjs/cloudflare is not installed
+    // This allows the config to work even without Cloudflare dependencies
+  }
+}
