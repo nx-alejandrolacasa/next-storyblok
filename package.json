@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev --turbo",
     "dev:https": "next dev --turbo --experimental-https --port 3010",
-    "build": "@cloudflare/next-on-pages",
-    "pages:build": "@cloudflare/next-on-pages",
+    "build": "next build",
+    "pages:build": "npx @opennextjs/cloudflare build",
+    "pages:dev": "npx wrangler dev",
+    "pages:deploy": "npx wrangler deploy",
     "start": "next start",
     "lint": "biome check .",
     "lint:fix": "biome check --write --unsafe .",
@@ -27,7 +29,7 @@
     "@storyblok/richtext": "3.8.2",
     "class-variance-authority": "0.7.1",
     "colord": "2.9.3",
-    "next": "15.5.7",
+    "next": "^16.0.8",
     "next-intl": "4.5.8",
     "react": "19.2.1",
     "react-dom": "19.2.1",
@@ -38,7 +40,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.8",
-    "@cloudflare/next-on-pages": "1.13.16",
+    "@opennextjs/cloudflare": "^1.14.4",
     "@tailwindcss/postcss": "4.1.17",
     "@types/node": "24.10.2",
     "@types/react": "19.2.7",
@@ -51,8 +53,8 @@
     "storyblok-generate-ts": "2.2.0",
     "tailwindcss": "4.1.17",
     "typescript": "5.9.3",
-    "vercel": "47.0.4",
     "vite-tsconfig-paths": "5.1.4",
-    "vitest": "4.0.15"
+    "vitest": "4.0.15",
+    "wrangler": "^4.53.0"
   }
 }

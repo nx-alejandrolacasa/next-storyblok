@@ -11,6 +11,8 @@
 # next.js
 /.next/
 /out/
+/.open-next/
+/.worker/
 
 # production
 /build
